@@ -1,29 +1,10 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        cms-test
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <li v-for="post in posts" :key="post.slug">
+      <nuxt-link :to="`blog/${post.slug}`">
+        {{ post.title }}
+      </nuxt-link>
+    </li>
   </div>
 </template>
 
@@ -34,6 +15,13 @@ export default {
       script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
     };
   },
+  async asyncData({ $content }) {
+    const posts = await $content("blog").fetch();
+
+    return {
+      posts,
+    };
+  }
 }
 </script>
 
