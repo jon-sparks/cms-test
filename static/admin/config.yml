@@ -17,12 +17,12 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - label: 'List'
-        name: 'list'
-        widget: 'list'
+      - label: 'Object'
+        name: 'object'
+        widget: 'object'
         fields:
-        - {label: Name, name: name, widget: string, default: "Emmet"}
-        - {label: Text, name: text, widget: markdown, default: "Emmet"}
+        - {label: Name, name: name, widget: string}
+        - {label: Text, name: text, widget: markdown}
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
