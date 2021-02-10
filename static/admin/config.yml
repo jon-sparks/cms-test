@@ -6,6 +6,23 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: 'home'
+    label: 'Home'
+    folder: 'content/home'
+    format: 'frontmatter'
+    create: true
+    slug: home
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'List'
+        name: 'list'
+        widget: 'list'
+        fields:
+        - {label: Name, name: name, widget: string, default: "Emmet"}
+        - {label: Name, name: name, widget: markdown, default: "Emmet"}
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
