@@ -16,11 +16,18 @@ export default {
     };
   },
   async asyncData({ $content }) {
-    const posts = await $content("blog").fetch();
+    const homeData = await $content("home").fetch();
+    const files = await $content({ deep: true }).only(['path']).fetch()
 
     return {
-      posts,
+      homeData,
+      files
     };
+  },
+  computed: {
+    formattedFiles () {
+      return this.files.map(file => file.path === '/index' ? '/' : file.path)
+    }
   }
 }
 </script>

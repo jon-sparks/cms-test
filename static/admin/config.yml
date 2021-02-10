@@ -17,12 +17,14 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - label: 'Object'
-        name: 'object'
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Banner'
+        name: 'banner'
         widget: 'object'
         fields:
-        - {label: Name, name: name, widget: string}
-        - {label: Text, name: text, widget: markdown}
+        - {label: Image, name: image, widget: image}
+        - {label: Banner Text, name: banner_text, widget: string}
+        - {label: Image, name: image, widget: image}
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
@@ -34,7 +36,8 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Featured Image', name: 'featured-image', widget: 'image' }
       - label: 'Page Section'
         name: 'sections'
         widget: 'list'
