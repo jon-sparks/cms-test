@@ -22,7 +22,7 @@ collections:
         widget: 'list'
         fields:
         - {label: Name, name: name, widget: string, default: "Emmet"}
-        - {label: Name, name: name, widget: markdown, default: "Emmet"}
+        - {label: Text, name: text, widget: markdown, default: "Emmet"}
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
