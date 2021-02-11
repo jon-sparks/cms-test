@@ -1,10 +1,12 @@
 <template>
   <div class="container">
-    <li v-for="post in posts" :key="post.slug">
-      <nuxt-link :to="`blogs/${post.slug}`">
-        {{ post.title }}
-      </nuxt-link>
-    </li>
+    <Banner
+      :image="home.banner.image"
+      :text="home.banner.banner_text"
+    />
+    <Content
+      :content="home"
+    />
   </div>
 </template>
 
@@ -27,6 +29,9 @@ export default {
   computed: {
     formattedFiles () {
       return this.files.map(file => file.path === '/index' ? '/' : file.path)
+    },
+    home () {
+      return this.homeData[0];
     }
   }
 }
@@ -34,12 +39,12 @@ export default {
 
 <style>
 .container {
-  margin: 0 auto;
+  /* margin: 0 auto;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center; */
 }
 
 .title {

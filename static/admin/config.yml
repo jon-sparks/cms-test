@@ -23,6 +23,23 @@ collections:
         fields:
         - {label: Image, name: image, widget: image}
         - {label: Banner Text, name: banner_text, widget: string}
+  - name: 'index'
+    label: 'Index'
+    folder: 'content/index'
+    format: 'frontmatter'
+    create: true
+    slug: index
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Banner'
+        name: 'banner'
+        widget: 'object'
+        fields:
+        - {label: Image, name: image, widget: image}
+        - {label: Banner Text, name: banner_text, widget: string}
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
