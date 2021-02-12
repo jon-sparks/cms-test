@@ -1,6 +1,10 @@
 <template>
   <header>
-    <h2>Logo</h2>
+    <nuxt-link
+      to="/"
+    >
+      <h2>Logo</h2>
+    </nuxt-link>
     <nav>
 
     </nav>
@@ -9,6 +13,11 @@
 
 <script>
 export default {
+  computed: {
+    navItems () {
+      return this.$store.state.nav;
+    }
+  }
 }
 </script>
 

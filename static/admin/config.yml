@@ -11,7 +11,7 @@ collections:
     folder: 'content/home'
     format: 'frontmatter'
     create: true
-    slug: home
+    slug: '{{slug}}'
     editor:
       preview: true
     fields:
@@ -28,7 +28,7 @@ collections:
     folder: 'content/index'
     format: 'frontmatter'
     create: true
-    slug: index
+    slug: '{{slug}}'
     editor:
       preview: true
     fields:

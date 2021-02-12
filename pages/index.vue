@@ -18,20 +18,28 @@ export default {
     };
   },
   async asyncData({ $content }) {
-    const homeData = await $content("home").fetch();
+    const page = await $content("home").fetch();
     const files = await $content({ deep: true }).only(['path']).fetch()
 
     return {
-      homeData,
+      page,
       files
     };
+  },
+  mounted () {
+    this.setNav()
+  },
+  methods: {
+    setNav () {
+      this.$store.commit('SAVE_NAV', this.files)
+    }
   },
   computed: {
     formattedFiles () {
       return this.files.map(file => file.path === '/index' ? '/' : file.path)
     },
     home () {
-      return this.homeData[0];
+      return this.page[0];
     }
   }
 }

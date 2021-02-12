@@ -1,24 +1,35 @@
 <template>
   <section>
-    <!-- <Banner
-      :image="home.banner.image"
-      :text="home.banner.banner_text"
-    /> -->
+    <Banner
+      :image="page.banner.image"
+      :text="page.banner.banner_text"
+    />
     <section class="main-width">
       <h1>My Blogs</h1>
     </section>
+    <div v-for="(item, index) in indexData" :key="index">
+      <img :src="item['featured-image']" alt="">
+      <h4>{{ item.title }}</h4>
+    </div>
   </section>
 </template>
 
 <script>
 export default {
   async asyncData({ $content }) {
-    const blogData = await $content("blog").fetch();
+    const indexData = await $content("blog").fetch();
+    const blogIndex = await $content("index").where({title: 'Blogs'}).fetch();
 
     return {
-      blogData,
+      blogIndex,
+      indexData,
     };
   },
+  computed: {
+    page () {
+      return this.blogIndex[0]
+    }
+  }
 }
 </script>
 
