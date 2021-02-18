@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  transition: `home`,
   head() {
     return {
       script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
@@ -19,25 +20,12 @@ export default {
   },
   async asyncData({ $content }) {
     const page = await $content("home").fetch();
-    const files = await $content({ deep: true }).only(['path']).fetch()
 
     return {
       page,
-      files
     };
   },
-  mounted () {
-    this.setNav()
-  },
-  methods: {
-    setNav () {
-      this.$store.commit('SAVE_NAV', this.files)
-    }
-  },
   computed: {
-    formattedFiles () {
-      return this.files.map(file => file.path === '/index' ? '/' : file.path)
-    },
     home () {
       return this.page[0];
     }
@@ -46,15 +34,6 @@ export default {
 </script>
 
 <style>
-.container {
-  /* margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center; */
-}
-
 .title {
   font-family:
     'Quicksand',
@@ -83,5 +62,14 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.home-enter-active,
+.home-leave-active {
+  transition: all ease .3s;
+}
+.home-enter,
+.home-leave-active {
+  opacity: 0;
 }
 </style>

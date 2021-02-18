@@ -87,3 +87,51 @@ collections:
                 fields:
                   - { label: Title, name: title, widget: string }
                   - { label: Text, name: text, widget: markdown }
+  - name: 'products'
+    label: 'Products'
+    folder: 'content/products'
+    format: 'frontmatter'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Featured Image', name: 'featured-image', widget: 'image' }
+      - label: 'Page Section'
+        name: 'sections'
+        widget: 'list'
+        types:
+          - label: 'Text Block'
+            name: 'text_block'
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: markdown }
+          - label: 'Carousel'
+            name: 'carousel'
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: markdown }
+              - label: 'Images'
+                name: images
+                widget: list
+                fields:
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: Image Description, name: alt, widget: string }
+          - label: 'Block List'
+            name: 'block_list'
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - { label: Text, name: text, widget: markdown, required: false }
+              - label: 'Blocks'
+                name: blocks
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: markdown }
+                  

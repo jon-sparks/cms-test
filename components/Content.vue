@@ -15,5 +15,6 @@ export default {
   width: 100%;
   max-width: 900px;
   margin: 1rem auto;
+  padding: 0 1rem;
 }
 </style>

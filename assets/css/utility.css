@@ -1,5 +1,14 @@
+:root {
+  --primary: #ff6b6c;
+  --secondary: #ffc145;
+  --tertiary: #008080;
+  --accent: #f7f7f7;
+  --white: #FFFFFB;
+}
+
 .main-width {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1650px;
   margin: 0 auto;
+  padding: 0 1rem;
 }

@@ -5,12 +5,11 @@
       :text="page.banner.banner_text"
     />
     <section class="main-width">
-      <h1>My Blogs</h1>
+      <IndexList
+        :items="indexData"
+      />
     </section>
-    <div v-for="(item, index) in indexData" :key="index">
-      <img :src="item['featured-image']" alt="">
-      <h4>{{ item.title }}</h4>
-    </div>
+
   </section>
 </template>
 
@@ -18,7 +17,7 @@
 export default {
   async asyncData({ $content }) {
     const indexData = await $content("blog").fetch();
-    const blogIndex = await $content("index").where({title: 'Blogs'}).fetch();
+    const blogIndex = await $content("index").where({title: 'Blog'}).fetch();
 
     return {
       blogIndex,
