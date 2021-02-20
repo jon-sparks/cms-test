@@ -33,4 +33,18 @@ sections:
     image:
       image: https://cdn.pixabay.com/photo/2019/11/15/15/48/mountain-4628685_960_720.jpg
       alt: mountain
+  - type: carousel
+    slide:
+      - text: Slide 1
+        image:
+          image: https://www.w3schools.com/howto/img_forest.jpg
+          alt: image
+        button:
+          text: Click Me
+      - text: Slide 2
+        image:
+          image: https://www.gettyimages.pt/gi-resources/images/Homepage/Hero/PT/PT_hero_42_153645159.jpg
+          alt: img
+        button:
+          text: And Me
 ---
