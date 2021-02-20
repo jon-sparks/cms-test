@@ -134,4 +134,60 @@ collections:
                 fields:
                   - { label: Title, name: title, widget: string }
                   - { label: Text, name: text, widget: markdown }
+  - name: 'flexible page'
+    label: 'Flexible Page'
+    folder: 'content/flexible'
+    format: 'frontmatter'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Featured Image', name: 'featured-image', widget: 'image' }
+      - label: 'Flexible Section'
+        name: 'sections'
+        widget: 'list'
+        types:
+
+          - label: 'Text Block'
+            name: 'text_block'
+            widget: object
+            fields:
+              - { label: Text, name: text, widget: markdown }
+
+          - label: 'Full Width Image'
+            name: 'full_width_image'
+            widget: object
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: Image Description, name: alt, widget: string }
                   
+          - label: 'Image by Text'
+            name: 'image_by_text'
+            widget: object
+            fields:
+              - { label: Text, name: text, widget: markdown }
+              - label: 'Image'
+                name: 'image'
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image }
+                  - { label: Image Description, name: alt, widget: string }
+                  
+          - label: 'Carousel'
+            name: 'carousel'
+            widget: list
+            fields:
+              - { label: Text, name: text, widget: markdown }
+              - label: 'Image'
+                name: 'image'
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image }
+                  - { label: Image Description, name: alt, widget: string }
+              - label: 'Button'
+                name: 'button'
+                widths: object
+                fields:
+                  - { label: Text, name: text, widget: string }

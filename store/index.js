@@ -29,6 +29,11 @@ export const getters = {
           ...item,
           navPath: item.path.substring(6)
         }
+      } else if (item.path.includes(`/flexible`)) {
+        return {
+          ...item,
+          navPath: item.path.substring(10)
+        }
       } else if (item.dir === `/${item.slug}`) {
         return {
           ...item,
