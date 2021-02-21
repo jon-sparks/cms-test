@@ -20,6 +20,12 @@
         :section="section"
       />
 
+      <Carousel
+        v-else-if="section.type === 'carousel'"
+        :key="index"
+        :section="section"
+      />
+
     </template>
   </section>
 </template>
