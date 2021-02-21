@@ -47,4 +47,5 @@ sections:
           alt: img
         button:
           text: And Me
+    full_width: false
 ---
