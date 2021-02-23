@@ -38,6 +38,13 @@ sections:
     image:
       image: https://cdn.pixabay.com/photo/2019/11/15/15/48/mountain-4628685_960_720.jpg
       alt: mountain
+  - type: image_by_text
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco.
+    image:
+      image: https://learn.corel.com/wp-content/uploads/2020/07/PP-BasicImageEditing-Image01.jpg
+      alt: an image
   - type: carousel
     slide:
       - text: Slide 1
