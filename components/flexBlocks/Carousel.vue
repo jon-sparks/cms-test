@@ -1,5 +1,8 @@
 <template>
-  <section class="carousel">
+  <section
+    :class="{ 'content-width standard' : !section.full_width }"
+    class="carousel"
+  >
     <client-only>
       <swiper
         :options="carouselOptions"
@@ -13,6 +16,8 @@
             :alt="slide.image.alt"
           >
         </swiper-slide>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
       <div class="swiper-pagination"></div>
     </client-only>
@@ -30,22 +35,31 @@ export default {
           el: '.swiper-pagination',
           type: 'bullets'
         },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
       }
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .carousel {
   position: relative;
   width: 100%;
-  height: 35vw;
+  /* height: 35vw; */
 }
 
 .swiper-pagination {
   width: 100%;
-  bottom: 0;
+  bottom: 5px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
 }
 
 /deep/.swiper-pagination-bullet {
@@ -63,19 +77,14 @@ export default {
   height: 14px;
 }
 
-.carousel /deep/.swiper-wrapper {
-  position: relative;
-  height: 35vw;
-}
-
-.carousel /deep/.swiper-slide {
-  height: 35vw;
-}
-
 .carousel /deep/.swiper-slide img {
   height: 35vw;
   width: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.carousel.standard /deep/.swiper-slide img {
+  height: 30vw;
 }
 </style>

@@ -12,3 +12,10 @@
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+.content-width {
+  width: 100%;
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}

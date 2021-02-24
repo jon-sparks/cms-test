@@ -16,36 +16,50 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .banner {
   position: relative;
   width: 100%;
-  height: 70vh;
-  padding-top: 100px;
+  height: 90vh;
+  // padding-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 5rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 330px;
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 100%);
+  }
 }
 
 .banner__image {
   position: relative;
   display: flex;
   align-items: center;
-  width: 75%;
-  height: 85%;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
 }
 
 h1 {
   transform: translateX(20%);
+  text-transform: uppercase;
   font-size: 95px;
+  font-weight: bold;
   line-height: 1;
-  color: rgb(65, 65, 65);
-  background: white;
-  padding: 1.5rem 3rem 1rem;
+  color: black;
+  padding: 1rem 3rem;
   z-index: 1;
+  background: white;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  mix-blend-mode: screen;
 }
 
 .banner-enter-active, .banner-leave-active {

@@ -54,7 +54,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
   z-index: 999;
   transition: background ease .3s;
 }
@@ -80,7 +81,7 @@ header.scrolled {
 
 nav a {
   color: var(--primary);
-  font-size: 22px;
+  font-size: 20px;
   text-transform: capitalize;
   padding: .5rem;
   margin: 0 1rem;

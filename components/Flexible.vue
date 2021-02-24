@@ -8,8 +8,8 @@
         :section="section"
       />
 
-      <FullWidthImage
-        v-else-if="section.type === 'full_width_image'"
+      <ImageBlock
+        v-else-if="section.type === 'image'"
         :key="index"
         :section="section"
       />

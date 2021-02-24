@@ -5,21 +5,37 @@
     </div>
     <div class="image-text__content">
       <div v-html="section.text" />
+      <Button
+        v-if="hasButton"
+        :button="section.button"
+      >
+        {{ section.button.text }}
+      </Button>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  props: [`section`]
+  props: [`section`],
+  computed: {
+    hasButton () {
+      return this.section.button.link.length > 0 && this.section.button.text.length > 0;
+    }
+  }
 }
+
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .image-text {
     position: relative;
     display: flex;
     padding: 2rem 0;
+
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
   }
   .image-text__image {
     width: 50%;
@@ -33,8 +49,9 @@ export default {
     width: 50%;
     padding: 2rem 9rem;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     font-size: 24px;
   }
 </style>

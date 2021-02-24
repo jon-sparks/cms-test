@@ -58,7 +58,7 @@ export default {
 }
 
 .index-item__content button {
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Titillium Web', sans-serif;;
   font-size: 22px;
   margin-top: 2rem;
   padding: .25rem 2rem;

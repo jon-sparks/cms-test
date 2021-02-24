@@ -2,6 +2,7 @@
   <div>
     <Header />
     <Nuxt />
+    <Footer />
   </div>
 </template>
 
@@ -12,15 +13,7 @@
   background: linear-gradient(52deg, rgba(245,245,245,1) 0%, rgba(249,239,255,1) 100%);
 }
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -31,7 +24,14 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Titillium Web', sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+  color: var(--primary);
+}
+
+p {
+  line-height: 1.6;
 }
 
 *,
