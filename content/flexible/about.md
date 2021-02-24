@@ -67,4 +67,9 @@ sections:
         button:
           text: And Me
     full_width: false
+  - type: video
+    youtube_embed: <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/cDinEsC9a2k" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+      gyroscope; picture-in-picture" allowfullscreen></iframe>
 ---
