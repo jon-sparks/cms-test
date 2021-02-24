@@ -1,5 +1,5 @@
 ---
-site_name: Template
+site_name: Template Site
 logo: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Android_O_Preview_Logo.png/240px-Android_O_Preview_Logo.png
 social:
   - social_media:
