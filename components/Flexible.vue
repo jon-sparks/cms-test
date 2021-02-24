@@ -26,6 +26,12 @@
         :section="section"
       />
 
+      <Video
+        v-else-if="section.type === 'video'"
+        :key="index"
+        :section="section"
+      />
+
     </template>
   </section>
 </template>

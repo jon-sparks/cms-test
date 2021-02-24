@@ -6,6 +6,28 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: 'Settings'
+    label: 'settings'
+    folder: 'content/settings'
+    format: 'frontmatter'
+    create: true
+    slug: 'settings'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Site Name', name: 'site_name', widget: 'string' }
+      - { label: 'Logo', name: 'logo', widget: 'image' }
+      - label: 'Social'
+        name: 'social'
+        widget: list
+        fields:
+          - label: 'Social Media'
+            name: 'social_media'
+            widget: object
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Link', name: 'link', widget: 'string' }
+
   - name: 'home'
     label: 'Home'
     folder: 'content/home'
@@ -160,7 +182,7 @@ collections:
             name: 'image'
             widget: object
             fields:
-              - { label: Full Width, name: full_width, widget: boolean, default: false }
+              - { label: Full Width, name: full_width, widget: boolean, required: false }
               - { label: Image, name: image, widget: image }
               - { label: Image Description, name: alt, widget: string }
                   
@@ -208,6 +230,8 @@ collections:
                   fields:
                     - { label: Text, name: text, widget: string }
 
-          - label: 'Youtube Embed'
-            name: 'youtube_embed'
-            widget: string
+          - label: 'Video'
+            name: 'video'
+            widget: object
+            fields:
+            - { label: 'Youtube Embed', name: 'youtube_embed', widget: string }
