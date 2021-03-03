@@ -1,6 +1,15 @@
 <template>
   <div>
     <h2>{{ post.title }}</h2>
+    <button class="snipcart-add-item"
+      data-item-id="starry-night"
+      :data-item-price="post.price"
+      data-item-url="/paintings/starry-night"
+      :data-item-description="post.short_description"
+      :data-item-image="post.featured_image"
+      :data-item-name="post.title">
+      Add to cart
+    </button>
     <nuxt-content :document="post" />
   </div>
 </template>

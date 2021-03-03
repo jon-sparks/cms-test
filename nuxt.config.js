@@ -48,7 +48,13 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxt/content',
+    '@nuxtjs/snipcart'
   ],
+
+  // Snipcart settings
+  snipcart: {
+    key: 'ODMxZTAwMTQtNTNmMS00MWZiLWE2YTUtZDNjYTUxYzc0NjgyNjM3NTAyMzAyODEyMjI1Mjk4',/* required https://app.snipcart.com/dashboard/account/credentials */
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

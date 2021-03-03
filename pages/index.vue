@@ -7,17 +7,28 @@
     <Content
       :content="home"
     />
+    <section>
+      <div>
+        <button class="snipcart-add-item"
+          data-item-id="starry-night"
+          data-item-price="79.99"
+          data-item-url="/paintings/starry-night"
+          data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
+          data-item-image="/assets/images/starry-night.jpg"
+          data-item-name="The Starry Night"
+          data-item-custom1-name="Frame color"
+          data-item-custom1-options="Black|Brown|Gold">
+          Add to cart
+        </button>
+      </div>
+      <div hidden id="snipcart" data-api-key="ODMxZTAwMTQtNTNmMS00MWZiLWE2YTUtZDNjYTUxYzc0NjgyNjM3NTAyMzAyODEyMjI1Mjk4" data-config-modal-style="side"></div>
+    </section>
   </div>
 </template>
 
 <script>
 export default {
   transition: `home`,
-  head() {
-    return {
-      script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
-    };
-  },
   async asyncData({ $content }) {
     const page = await $content("home").fetch();
 

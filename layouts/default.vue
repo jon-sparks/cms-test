@@ -6,6 +6,22 @@
   </div>
 </template>
 
+<script>
+export default {
+  head() {
+    return {
+      script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
+      title: `${this.siteName} | ${this.$route.name}`,
+    }
+  },
+  computed: {
+    siteName(){
+      return this.$store.state.settings[0].site_name;
+    }
+  }
+}
+</script>
+
 <style>
   body {
   background: var(--accent);
