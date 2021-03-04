@@ -1,5 +1,5 @@
 ---
-title: Chicken Burger
+title: Beef Burger
 date: 2021-02-16T09:30:15.866Z
 excerpt: A beef burger
 short_description: A beef burger that looks like a leather bag

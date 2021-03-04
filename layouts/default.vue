@@ -58,5 +58,6 @@ p {
 }
 .snipcart-modal__container {
   padding-top: 112px;
+  z-index: 9999;
 }
 </style>
