@@ -1,5 +1,9 @@
 <template>
   <div>
+    <Banner 
+      :image="post['featured-image']"
+      :text="post.title"
+    />
     <h2>{{ post.title }}</h2>
     <button class="snipcart-add-item"
       data-item-id="starry-night"
