@@ -48,13 +48,10 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxt/content',
-    '@nuxtjs/snipcart'
+    ['nuxt-stripe-module', {
+      publishableKey: 'pk_test_51H7j1aASANJqFs3Wcfr4qbv93AuoVzqLonZLLYqcbSgOXlWbyVrd3qJUn6zMe57ywNeY5rBVBvAwpSXQP86LlrdS00YIMrZFh2',
+    }]
   ],
-
-  // Snipcart settings
-  snipcart: {
-    key: 'ODMxZTAwMTQtNTNmMS00MWZiLWE2YTUtZDNjYTUxYzc0NjgyNjM3NTAyMzAyODEyMjI1Mjk4',/* required https://app.snipcart.com/dashboard/account/credentials */
-  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

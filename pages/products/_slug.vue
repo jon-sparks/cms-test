@@ -13,20 +13,8 @@
         <option value="12">Silver</option>
         <option value="100">Gold</option>
       </select>
-
       <h3>{{ post.price }}</h3>
-      <button class="snipcart-add-item"
-        :data-item-id="slug"
-        :data-item-price="post.price"
-        :data-item-url="`/products/${slug}`"
-        :data-item-description="post.short_description"
-        :data-item-image="post.featured_image"
-        :data-item-name="post.title"
-        data-item-custom1-name="Flavor"
-        data-item-custom1-options="Natural|Smoked[+100.00]"
-      >
-        Add to cart
-      </button>
+      <button @click="buyItem">Buy me</button>
       <nuxt-content :document="post" />
     </div>
   </section>
@@ -51,6 +39,32 @@ export default {
     return {
       extra: 0
     }
+  },
+  methods: {
+    buyItem () {
+      this.$stripe.redirectToCheckout({
+        lineItems: [
+          {
+            price: 'price_1IT1NAASANJqFs3W3ca0nMLO', // Replace with the ID of your price
+            quantity: 1,
+          },
+          {
+            price: 'price_1H848VASANJqFs3WBkPnUkMn', // Replace with the ID of your price
+            quantity: 1,
+          },
+        ],
+        mode: 'payment',
+        successUrl: 'http://localhost:3000',
+        cancelUrl: 'http://localhost:3000',
+      }).then(function (result) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer
+        // using `result.error.message`.
+      });
+    }
+  },
+  mounted () {
+    console.log(this.$stripe.redirectToCheckout)
   },
   computed: {
     slug () {
