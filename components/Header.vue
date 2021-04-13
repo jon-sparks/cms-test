@@ -15,6 +15,7 @@
         >
           {{ item.title }}
         </nuxt-link>
+        <BasketButton />
       </nav>
     </div>
   </header>
@@ -32,7 +33,7 @@ export default {
       window.scrollY > 10
         ? this.scrolled = true
         : this.scrolled = false
-    }
+    },
   },
   beforeMount () {
     window.addEventListener('scroll', this.handleScroll);
@@ -50,7 +51,7 @@ export default {
 
 <style scoped>
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -60,9 +61,9 @@ header {
   transition: background ease .3s;
 }
 
-header.scrolled {
+/* header.scrolled {
   background: var(--secondary);
-}
+} */
 
 .nav-container {
   position: relative;
@@ -79,8 +80,13 @@ header.scrolled {
   height: 100%;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav a {
-  color: var(--primary);
+  color: white;
   font-size: 20px;
   text-transform: capitalize;
   padding: .5rem;

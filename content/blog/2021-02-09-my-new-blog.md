@@ -17,8 +17,3 @@ sections:
     image: https://res.cloudinary.com/doqfxofg6/image/upload/v1618298884/pexels-tobias-bj%C3%B8rkli-2387966_1_hdtbjr.jpg
     alt: an image from pexels
 ---
-This is some content. This is **bold text** and this is <https://www.google.com> a link
-
-New lines
-
-New line.

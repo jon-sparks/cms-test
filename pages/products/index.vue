@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  transition: `pagefade`,
   async asyncData({ $content }) {
     const indexData = await $content("products").fetch();
     const productIndex = await $content("index").where({title: 'Products'}).fetch();

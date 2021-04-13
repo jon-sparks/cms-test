@@ -19,3 +19,15 @@
   margin: 1rem auto;
   padding: 0 1rem;
 }
+
+
+// Transitions
+
+.pagefade-enter-active,
+.pagefade-leave-active {
+  transition: all ease .3s;
+}
+.pagefade-enter,
+.pagefade-leave-active {
+  opacity: 0;
+}

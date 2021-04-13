@@ -7,21 +7,22 @@
     <div class="main-width">
       <h2>{{ post.title }}</h2>
 
-      <select v-model="extra">
-        <option value="0">Standard</option>
-        <option value="5">Bronze</option>
-        <option value="12">Silver</option>
-        <option value="100">Gold</option>
-      </select>
-      <h3>{{ post.price }}</h3>
-      <button @click="buyItem">Buy me</button>
+      <Configurator
+        v-if="post.enable_configurator"
+        :sections="post.configurator_options"
+      />
+
+      <button @click="addToBasket">Add to basket</button>
       <nuxt-content :document="post" />
     </div>
   </section>
 </template>
 
 <script>
+import Configurator from '../../components/Configurator.vue';
 export default {
+  transition: `pagefade`,
+  components: { Configurator },
   async asyncData({ $content, params, error }) {
     let post;
     try {
@@ -37,22 +38,35 @@ export default {
   },
   data () {
     return {
-      extra: 0
+      options: null,
     }
   },
   methods: {
+    addToBasket () {
+      this.$store.dispatch(`addToBasket`, {
+        title: this.post.title,
+        image: this.post['featured-image'],
+        qty: 4,
+        lineItems: this.options
+      });
+    },
     buyItem () {
       this.$stripe.redirectToCheckout({
-        lineItems: [
-          {
-            price: 'price_1IT1NAASANJqFs3W3ca0nMLO', // Replace with the ID of your price
-            quantity: 1,
-          },
-          {
-            price: 'price_1H848VASANJqFs3WBkPnUkMn', // Replace with the ID of your price
-            quantity: 1,
-          },
-        ],
+        lineItems: this.options,
+        // lineItems: [
+        //   {
+        //     price: 'price_1IUZYdASANJqFs3WnG4kzj7o', // Replace with the ID of your price
+        //     quantity: 1,
+        //   },
+        //   {
+        //     price: 'price_1IUx96ASANJqFs3W8g701Iix', // Replace with the ID of your price
+        //     quantity: 1,
+        //   },
+        //   {
+        //     price: 'price_1IUxBTASANJqFs3WkCx7B8vE', // Replace with the ID of your price
+        //     quantity: 1,
+        //   },
+        // ],
         mode: 'payment',
         successUrl: 'http://localhost:3000',
         cancelUrl: 'http://localhost:3000',
@@ -63,16 +77,10 @@ export default {
       });
     }
   },
-  mounted () {
-    console.log(this.$stripe.redirectToCheckout)
-  },
   computed: {
     slug () {
       return this.post.title.replace(/\s+/g, '-').toLowerCase();
     },
-    finalPrice () {
-      return parseFloat(this.post.price) + parseFloat(this.extra);
-    }
   }
 };
 </script>

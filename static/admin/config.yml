@@ -75,40 +75,74 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
       - { label: 'Featured Image', name: 'featured-image', widget: 'image' }
-      - label: 'Page Section'
+      - label: 'Flexible Section'
         name: 'sections'
         widget: 'list'
         types:
+
           - label: 'Text Block'
             name: 'text_block'
             widget: object
             fields:
-              - { label: Title, name: title, widget: string }
               - { label: Text, name: text, widget: markdown }
+
+          - label: 'Image'
+            name: 'image'
+            widget: object
+            fields:
+              - { label: Full Width, name: full_width, widget: boolean, required: false }
+              - { label: Image, name: image, widget: image }
+              - { label: Image Description, name: alt, widget: string }
+                  
+          - label: 'Image by Text'
+            name: 'image_by_text'
+            widget: object
+            fields:
+              - { label: Text, name: text, widget: markdown }
+              - label: 'Image'
+                name: 'image'
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image }
+                  - { label: Image Description, name: alt, widget: string }
+              - label: 'Button'
+                name: 'button'
+                widget: object
+                fields:
+                  - { label: Text, name: text, widget: string }
+                  - { label: External Link, name: external_link, widget: boolean, required: false }
+                  - { label: Link, name: link, widget: string }
+                  
           - label: 'Carousel'
             name: 'carousel'
             widget: object
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Text, name: text, widget: markdown }
-              - label: 'Images'
-                name: images
+              - label: 'Full Width'
+                name: 'full_width'
+                widget: boolean
+                default: false
+              - label: 'Slides'
+                name: 'slides'
                 widget: list
                 fields:
-                  - { label: "Image", name: "image", widget: "image", required: false }
-                  - { label: Image Description, name: alt, widget: string }
-          - label: 'Block List'
-            name: 'block_list'
+                - { label: Text, name: text, widget: text }
+                - label: 'Image'
+                  name: 'image'
+                  widget: object
+                  fields:
+                    - { label: Image, name: image, widget: image }
+                    - { label: Image Description, name: alt, widget: string }
+                - label: 'Button'
+                  name: 'button'
+                  widget: object
+                  fields:
+                    - { label: Text, name: text, widget: string }
+
+          - label: 'Video'
+            name: 'video'
             widget: object
             fields:
-              - { label: Title, name: title, widget: string, required: false }
-              - { label: Text, name: text, widget: markdown, required: false }
-              - label: 'Blocks'
-                name: blocks
-                widget: list
-                fields:
-                  - { label: Title, name: title, widget: string }
-                  - { label: Text, name: text, widget: markdown }
+            - { label: 'Youtube Embed', name: 'youtube_embed', widget: string }
   - name: 'products'
     label: 'Products'
     folder: 'content/products'
@@ -121,41 +155,88 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Short Description', name: 'short_description', widget: 'string' }
       - { label: 'Featured Image', name: 'featured-image', widget: 'image' }
-      - { label: 'Price', name: 'price', widget: 'number', min: 0, value_type: float }
-      - label: 'Page Section'
-        name: 'sections'
-        widget: 'list'
-        types:
-          - label: 'Text Block'
-            name: 'text_block'
-            widget: object
+      - label: 'Enable Configurator'
+        name: 'enable_configurator'
+        widget: boolean
+      - label: 'Configurator Options'
+        name: 'configurator_options'
+        widget: list
+        fields:
+          - { label: Option Name, name: option_name, widget: string }
+          - label: 'Option Parts'
+            name: 'option_parts'
+            widget: list
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Text, name: text, widget: markdown }
-          - label: 'Carousel'
-            name: 'carousel'
-            widget: object
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Text, name: text, widget: markdown }
-              - label: 'Images'
-                name: images
-                widget: list
+              - { label: Name, name: name, widget: string }
+              - { label: Price ID, name: price_id, widget: string }
+          - label: 'Flexible Section'
+            name: 'sections'
+            widget: 'list'
+            types:
+
+              - label: 'Text Block'
+                name: 'text_block'
+                widget: object
                 fields:
-                  - { label: "Image", name: "image", widget: "image", required: false }
-                  - { label: Image Description, name: alt, widget: string }
-          - label: 'Block List'
-            name: 'block_list'
-            widget: object
-            fields:
-              - { label: Title, name: title, widget: string, required: false }
-              - { label: Text, name: text, widget: markdown, required: false }
-              - label: 'Blocks'
-                name: blocks
-                widget: list
-                fields:
-                  - { label: Title, name: title, widget: string }
                   - { label: Text, name: text, widget: markdown }
+
+              - label: 'Image'
+                name: 'image'
+                widget: object
+                fields:
+                  - { label: Full Width, name: full_width, widget: boolean, required: false }
+                  - { label: Image, name: image, widget: image }
+                  - { label: Image Description, name: alt, widget: string }
+                      
+              - label: 'Image by Text'
+                name: 'image_by_text'
+                widget: object
+                fields:
+                  - { label: Text, name: text, widget: markdown }
+                  - label: 'Image'
+                    name: 'image'
+                    widget: object
+                    fields:
+                      - { label: Image, name: image, widget: image }
+                      - { label: Image Description, name: alt, widget: string }
+                  - label: 'Button'
+                    name: 'button'
+                    widget: object
+                    fields:
+                      - { label: Text, name: text, widget: string }
+                      - { label: External Link, name: external_link, widget: boolean, required: false }
+                      - { label: Link, name: link, widget: string }
+                      
+              - label: 'Carousel'
+                name: 'carousel'
+                widget: object
+                fields:
+                  - label: 'Full Width'
+                    name: 'full_width'
+                    widget: boolean
+                    default: false
+                  - label: 'Slides'
+                    name: 'slides'
+                    widget: list
+                    fields:
+                    - { label: Text, name: text, widget: text }
+                    - label: 'Image'
+                      name: 'image'
+                      widget: object
+                      fields:
+                        - { label: Image, name: image, widget: image }
+                        - { label: Image Description, name: alt, widget: string }
+                    - label: 'Button'
+                      name: 'button'
+                      widget: object
+                      fields:
+                        - { label: Text, name: text, widget: string }
+
+              - label: 'Video'
+                name: 'video'
+                widget: object
+                fields:
+                - { label: 'Youtube Embed', name: 'youtube_embed', widget: string }
   - name: 'flexible page'
     label: 'Flexible Page'
     folder: 'content/flexible'

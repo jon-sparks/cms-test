@@ -4,13 +4,15 @@
       :image="post['featured-image']"
       :text="post.title"
     />
-    <h2>{{ post.title }}</h2>
-    <nuxt-content :document="post" />
+    <Flexible
+      :sections="post.sections"
+    />
   </div>
 </template>
 
 <script>
 export default {
+  transition: `pagefade`,
   async asyncData({ $content, params, error }) {
     let post;
     try {

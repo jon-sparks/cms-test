@@ -1,6 +1,8 @@
 export const state = () => ({
   nav: [],
-  settings: []
+  settings: [],
+  basketItems: [],
+  basketStatus: false
 });
 
 export const mutations = {
@@ -9,6 +11,15 @@ export const mutations = {
   },
   SAVE_SETTINGS (state, config) {
     state.settings = config;
+  },
+  SET_BASKET_STATUS (state, config) {
+    state.basketStatus = config;
+  },
+  ADD_TO_BASKET (state, value) {
+    state.basketItems = [...state.basketItems, value];
+  },
+  REMOVE_FROM_BASKET (state, value) {
+    state.basketItems.length > 1 ? state.basketItems = state.basketItems.splice(value, 1) : state.basketItems.shift();
   },
 };
 
@@ -26,11 +37,20 @@ export const actions = {
   saveSettings({ commit }, value) {
     commit(`SAVE_SETTINGS`, value);
   },
+  setBasketStatus({ commit }, value) {
+    commit(`SET_BASKET_STATUS`, value);
+  },
+  addToBasket({ commit }, value) {
+    commit(`ADD_TO_BASKET`, value);
+  },
+  removeFromBasket({ commit }, value) {
+    commit(`REMOVE_FROM_BASKET`, value);
+  },
 };
 
 export const getters = {
   getSortedNav: state => {
-    const mainNav = state.nav.filter(item => ![`/blog`, `/products`, `/home`].includes(item.dir))
+    const mainNav = state.nav.filter(item => ![`/blog`, `/products`, `/home`, `/settings`].includes(item.dir))
     return mainNav.map(item => {
       if (item.path.includes(`/index`)) {
         return {

@@ -1,5 +1,8 @@
 <template>
   <div>
+    <Basket 
+      v-if="basketStatus"
+    />
     <Header />
     <Nuxt />
     <Footer />
@@ -15,8 +18,11 @@ export default {
     }
   },
   computed: {
-    siteName(){
+    siteName () {
       return this.$store.state.settings[0].site_name;
+    },
+    basketStatus () {
+      return this.$store.state.basketStatus;
     }
   }
 }

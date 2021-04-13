@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  transition: `pagefade`,
   async asyncData({ $content, params }) {
     const page = await $content(`/flexible/${params.slug}`).fetch();
 
