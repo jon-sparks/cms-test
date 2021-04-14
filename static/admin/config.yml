@@ -54,6 +54,7 @@ collections:
     editor:
       preview: true
     fields:
+      - { label: 'Menu Order', name: 'menu-order', widget: 'number' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - label: 'Banner'
@@ -248,6 +249,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Featured Image', name: 'featured-image', widget: 'image' }
+      - { label: 'Menu Order', name: 'menu-order', widget: 'number' }
       - label: 'Flexible Section'
         name: 'sections'
         widget: 'list'
