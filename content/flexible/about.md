@@ -1,4 +1,5 @@
 ---
+menu-order: 1
 title: About
 featured-image: https://images.pexels.com/photos/2286895/pexels-photo-2286895.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
 sections:

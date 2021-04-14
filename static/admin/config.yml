@@ -247,9 +247,9 @@ collections:
     editor:
       preview: false
     fields:
+      - { label: 'Menu Order', name: 'menu-order', widget: 'number' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Featured Image', name: 'featured-image', widget: 'image' }
-      - { label: 'Menu Order', name: 'menu-order', widget: 'number' }
       - label: 'Flexible Section'
         name: 'sections'
         widget: 'list'
