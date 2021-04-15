@@ -1,9 +1,9 @@
 <template>
   <section class="content-width">
     <form name="contact" netlify>
-      <input type="text" placeholder="name">
-      <input type="text" placeholder="email">
-      <textarea placeholder="message" />
+      <input type="text" name="name" placeholder="name">
+      <input type="email" name="email" placeholder="email">
+      <textarea name="message" placeholder="message" />
       <button type="submit">Send</button>
     </form>
   </section>
