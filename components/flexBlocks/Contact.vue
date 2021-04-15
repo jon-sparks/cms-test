@@ -1,6 +1,6 @@
 <template>
   <section class="content-width">
-    <form name="contact" netlify>
+    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
       <input type="text" name="name" placeholder="name">
       <input type="email" name="email" placeholder="email">
       <textarea name="message" placeholder="message" />
