@@ -73,7 +73,7 @@ export const getters = {
           navPath: item.path
         }
       }
-    })
+    }).sort((a, b) => a[`menu-order`] - b[`menu-order`])
   }
 };
 

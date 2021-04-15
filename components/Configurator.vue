@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="main">
     <div
       v-for="(section, index) in sections"
       :key="index"

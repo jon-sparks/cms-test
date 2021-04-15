@@ -62,8 +62,4 @@ p {
   box-sizing: border-box;
   margin: 0;
 }
-.snipcart-modal__container {
-  padding-top: 112px;
-  z-index: 9999;
-}
 </style>

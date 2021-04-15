@@ -1,9 +1,13 @@
 :root {
-  --primary: #ff6b6c;
-  --secondary: #ffc145;
-  --tertiary: #008080;
+  --primary: #3f3f3f;
+  --secondary: #575757;
+  --tertiary: #7e7e7e;
   --accent: #f7f7f7;
-  --white: #FFFFFB;
+  --white: #FFFFFF;
+}
+
+.main {
+  padding-bottom: 5rem;
 }
 
 .main-width {

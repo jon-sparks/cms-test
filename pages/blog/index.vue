@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="main">
     <Banner
       :image="page.banner.image"
       :text="page.banner.banner_text"

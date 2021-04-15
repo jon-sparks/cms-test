@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="main">
     <template v-for="(section, index) in sections">
     
       <TextBlock
@@ -32,12 +32,20 @@
         :section="section"
       />
 
+      <Contact
+        v-else-if="section.type === 'contact'"
+        :key="index"
+        :section="section"
+      />
+
     </template>
   </section>
 </template>
 
 <script>
+import Contact from './flexBlocks/Contact.vue'
 export default {
+  components: { Contact },
   props: [`sections`]
 }
 </script>

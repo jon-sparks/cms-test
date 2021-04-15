@@ -318,3 +318,7 @@ collections:
             widget: object
             fields:
             - { label: 'Youtube Embed', name: 'youtube_embed', widget: string }
+
+          - label: 'Contact Form'
+            name: 'contact_form'
+            widget: hidden

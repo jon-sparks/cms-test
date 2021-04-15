@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container main">
     <Banner
       :image="home.banner.image"
       :text="home.banner.banner_text"
