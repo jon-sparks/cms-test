@@ -33,7 +33,7 @@
       />
 
       <Contact
-        v-else-if="section.type === 'contact'"
+        v-else-if="section.type === 'contact_form'"
         :key="index"
         :section="section"
       />
