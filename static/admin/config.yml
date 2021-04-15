@@ -321,4 +321,12 @@ collections:
 
           - label: 'Contact Form'
             name: 'contact_form'
-            widget: hidden
+            widget: object
+            fields: 
+            - label: 'Additional Field'
+              name: 'additional_field'
+              widget: list
+              fields:
+              - label: 'Field'
+                name: 'field'
+                widget: string
