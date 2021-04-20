@@ -12,5 +12,6 @@ sections:
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum
   - type: contact_form
-    additional_field: []
+    form_name: Contact Page
+    form_title: Contact Us
 ---
