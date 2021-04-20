@@ -1,15 +1,21 @@
 <template>
-  <a
+  <button
+    v-if="submit"
     class="button"
-    v-if="button.external_link"
+  >
+    <slot />
+  </button>
+  <a
+    v-else-if="!submit && button.external_link"
+    class="button"
     :href="button.link"
     target="_blank"
   >
     <slot />
   </a>
   <nuxt-link
+    v-else-if="!submit"
     class="button"
-    v-else
     :to="button.link"
   >
     <slot />
@@ -18,7 +24,14 @@
 
 <script>
 export default {
-  props: [`button`]
+  props: {
+    button: {
+      default: {}
+    },
+    submit: {
+      default: false
+    },
+  }
 }
 </script>
 

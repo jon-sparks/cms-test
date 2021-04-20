@@ -323,10 +323,17 @@ collections:
             name: 'contact_form'
             widget: object
             fields: 
-            - label: 'Additional Field'
-              name: 'additional_field'
-              widget: list
+            - label: 'Form Title'
+              name: 'form_title'
+              widget: string
+              hint: 'Title above the contact form. Can be left blank.'
+            - label: 'Form Name'
+              name: 'form_name'
+              widget: string
+              hint: 'So you know which forms are being used. eg. Contact page or About page. (Not visible to user)'
+            - label: 'Button'
+              name: 'button'
+              widget: object
               fields:
-              - label: 'Field'
-                name: 'field'
-                widget: string
+              - { label: Text, name: text, widget: string }
+              
