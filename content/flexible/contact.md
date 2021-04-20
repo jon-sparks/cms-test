@@ -14,4 +14,6 @@ sections:
   - type: contact_form
     form_name: Contact Page
     form_title: Contact Us
+    button:
+      text: Send
 ---
