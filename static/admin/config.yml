@@ -336,4 +336,11 @@ collections:
               widget: object
               fields:
               - { label: Text, name: text, widget: string }
-              
+
+          - label: 'Featured Products'
+            name: 'featured_products'
+            widget: relation
+            collection: 'products'
+            search_fields: ['title', 'excerpt']
+            value_field: title
+            multiple: true
