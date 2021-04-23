@@ -25,7 +25,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 5rem;
+  // margin-bottom: 5rem;
 
   &::after {
     content: '';
