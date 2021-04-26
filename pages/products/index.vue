@@ -14,10 +14,10 @@
         @mouseleave="hover($event.type, 'left')"
         class="product__left"
       >
-        <img src="~assets/images/wheel.png" alt="">
+        <img src="~assets/images/dorado4.png" alt="">
         <div class="spec">
-          <h2>Wheel name</h2>
-          <h3>Spec</h3>
+          <h2>Dorado</h2>
+          <!-- <h3>Spec</h3> -->
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolorem omnis voluptatem, alias cupiditate excepturi, necessitatibus molestias quisquam esse ip.</p>
         </div>
       </div>
@@ -26,11 +26,16 @@
         @mouseleave="hover($event.type, 'right')"
         class="product__right"
       >
-        <img src="~assets/images/wheel.png" alt="">
+        <img src="~assets/images/sol.png" alt="">
         <div class="spec">
-          <h2>Wheel name</h2>
-          <h3>Spec</h3>
+          <h2>Sol</h2>
+          <!-- <h3>Spec</h3> -->
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolorem omnis voluptatem, alias cupiditate excepturi, necessitatibus molestias quisquam esse ip.</p>
+          <Button
+            :submit="true"
+          >
+            View
+          </Button>
         </div>
       </div>
     </section>
@@ -94,6 +99,18 @@ export default {
     overflow: hidden;
     transition: all ease .3s;
 
+    h2 {
+      font-family: "Sharp";
+      text-transform: uppercase;
+      font-size: 50px;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
     img {
       height: 90%;
       transition: all ease .3s;
@@ -103,13 +120,21 @@ export default {
       position: absolute;
       top: 50px;
       color: white;
-      width: 200px;
-      transition: opacity ease .3s;
+      width: 500px;
+      
+      h2 {
+        transition: all ease .3s;
+      }
+
+      p,
+      button {
+        transition: all ease .3s;
+      }
     }
   }
 
   .product__left {
-    background: black;
+    background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgb(31, 31, 31) 100%);
     
     img {
       transform: translateX(-520px) rotate(-72deg);
@@ -122,7 +147,7 @@ export default {
   }
 
   .product__right {
-    background: #2b2b2b;
+    background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(43,43,43,1) 100%);
 
     img {
       transform: translateX(520px) rotate(72deg);
@@ -147,7 +172,14 @@ export default {
       width: 10%;
 
       .spec {
-        opacity: 0;
+        h2 {
+          transform: rotate(90deg) translateX(255px);
+        }
+        
+        p,
+        button {
+          opacity: 0;
+        }
       }
     }
   }
@@ -158,7 +190,16 @@ export default {
       width: 10%;
 
       .spec {
-        opacity: 0;
+
+        h2 {
+          transform: rotate(90deg) translate(-250px, -500px);
+          transform-origin: left;
+        }
+        
+        p,
+        button {
+          opacity: 0;
+        }
       }
     }
     .product__right {

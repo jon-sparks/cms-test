@@ -6,6 +6,16 @@
   --white: #FFFFFF;
 }
 
+@font-face {
+  font-family: "Sharp";
+  src: local("Sharp"),
+  url(~assets/fonts/SharpGrotesk.otf) format("opentype");
+}
+
+html {
+  font-family: "Sharp";
+}
+
 .main {
   padding-bottom: 5rem;
 }
