@@ -4,5 +4,18 @@ title: Products
 banner:
   image: https://res.cloudinary.com/doqfxofg6/image/upload/v1613035620/IMG_9711_cs3amr.jpg
   banner_text: My Products
+product_feature:
+  left_product:
+    model_name: Dorado
+    description: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+      Doloremque dolorem omnis voluptatem, alias cupiditate excepturi,
+      necessitatibus molestias quisquam esse ip.
+    image: https://res.cloudinary.com/doqfxofg6/image/upload/v1619553920/sol_rr0be6.png
+  right_product:
+    model_name: Sol
+    description: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+      Doloremque dolorem omnis voluptatem, alias cupiditate excepturi,
+      necessitatibus molestias quisquam esse ip.
+    image: https://res.cloudinary.com/doqfxofg6/image/upload/v1619553928/dorado4_bwc803.png
 ---
 Some products
