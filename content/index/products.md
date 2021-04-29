@@ -11,11 +11,13 @@ product_feature:
       Doloremque dolorem omnis voluptatem, alias cupiditate excepturi,
       necessitatibus molestias quisquam esse ip.
     image: https://res.cloudinary.com/doqfxofg6/image/upload/v1619553928/dorado4_bwc803.png
+    related_product: /products/beef-burger
   right_product:
     model_name: Sol
     description: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
       Doloremque dolorem omnis voluptatem, alias cupiditate excepturi,
       necessitatibus molestias quisquam esse ip.
     image: https://res.cloudinary.com/doqfxofg6/image/upload/v1619553920/sol_rr0be6.png
+    related_product: /products/chicken-burger
 ---
 Some products
