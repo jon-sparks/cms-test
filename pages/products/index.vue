@@ -9,35 +9,39 @@
       class="product-showcase"
       ref="showcase"
     >
+
       <div 
         @mouseenter="hover($event.type, 'left')"
         @mouseleave="hover($event.type, 'left')"
         class="product__left"
       >
-        <img src="~assets/images/dorado4.png" alt="">
+        <img
+          :src="page.product_feature.left_product.image"
+          :alt="page.product_feature.left_product.model_name"
+        >
         <div class="spec">
-          <h2>Dorado</h2>
-          <!-- <h3>Spec</h3> -->
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolorem omnis voluptatem, alias cupiditate excepturi, necessitatibus molestias quisquam esse ip.</p>
+          <h2>{{ page.product_feature.left_product.model_name }}</h2>
+          <p>{{ page.product_feature.left_product.description }}</p>
+          <nuxt-link :to="page.product_feature.left_product.related_product">View</nuxt-link>
         </div>
       </div>
+
       <div         
         @mouseenter="hover($event.type, 'right')"
         @mouseleave="hover($event.type, 'right')"
         class="product__right"
       >
-        <img src="~assets/images/sol.png" alt="">
+        <img
+          :src="page.product_feature.right_product.image"
+          :alt="page.product_feature.right_product.model_name"
+        >
         <div class="spec">
-          <h2>Sol</h2>
-          <!-- <h3>Spec</h3> -->
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolorem omnis voluptatem, alias cupiditate excepturi, necessitatibus molestias quisquam esse ip.</p>
-          <Button
-            :submit="true"
-          >
-            View
-          </Button>
+          <h2>{{ page.product_feature.right_product.model_name }}</h2>
+          <p>{{ page.product_feature.right_product.description }}</p>
+          <nuxt-link :to="page.product_feature.right_product.related_product">View</nuxt-link>
         </div>
       </div>
+
     </section>
     <section class="main-width">
       <IndexList
@@ -137,7 +141,7 @@ export default {
     background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgb(31, 31, 31) 100%);
     
     img {
-      transform: translateX(-520px) rotate(-72deg);
+      transform: translateX(-51vh) rotate(-90deg);
     }
 
     .spec {
@@ -150,7 +154,7 @@ export default {
     background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(43,43,43,1) 100%);
 
     img {
-      transform: translateX(520px) rotate(72deg);
+      transform: translateX(51vh) rotate(90deg);
     }
 
     .spec {
@@ -165,17 +169,15 @@ export default {
       width: 90%;
 
       img {
-        transform: translateX(-400px) rotate(0deg);
+        transform: translateX(-300px) rotate(0deg);
       }
     }
     .product__right {
       width: 10%;
 
       .spec {
-        h2 {
-          transform: rotate(90deg) translateX(255px);
-        }
         
+        h2,
         p,
         button {
           opacity: 0;
@@ -190,12 +192,8 @@ export default {
       width: 10%;
 
       .spec {
-
-        h2 {
-          transform: rotate(90deg) translate(-250px, -500px);
-          transform-origin: left;
-        }
         
+        h2,
         p,
         button {
           opacity: 0;
@@ -206,7 +204,7 @@ export default {
       width: 90%;
 
       img {
-        transform: translateX(400px) rotate(0deg);
+        transform: translateX(300px) rotate(0deg);
       }
     }
   }

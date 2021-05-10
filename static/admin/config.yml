@@ -63,6 +63,52 @@ collections:
         fields:
         - {label: Image, name: image, widget: image}
         - {label: Banner Text, name: banner_text, widget: string}
+
+      - label: 'Product Feature'
+        name: 'product_feature'
+        widget: 'object'
+        fields: 
+        - label: 'Left Product'
+          name: 'left_product'
+          widget: 'object'
+          fields:
+          - label: 'Model Name'
+            name: 'model_name'
+            widget: 'string'
+          - label: 'Description'
+            name: 'description'
+            widget: 'string'
+          - label: 'Image'
+            name: 'image'
+            widget: 'image'
+          - label: 'Related Product'
+            name: 'related_product'
+            widget: 'relation'
+            collection: 'products'
+            search_fields: ["title"]
+            value_field: "/products/{{slug}}"
+            display_fields: ["title"]
+        - label: 'Right Product'
+          name: 'right_product'
+          widget: 'object'
+          fields:
+          - label: 'Model Name'
+            name: 'model_name'
+            widget: 'string'
+          - label: 'Description'
+            name: 'description'
+            widget: 'string'
+          - label: 'Image'
+            name: 'image'
+            widget: 'image'
+          - label: 'Related Product'
+            name: 'related_product'
+            widget: 'relation'
+            collection: 'products'
+            search_fields: ["title"]
+            value_field: "/products/{{slug}}"
+            display_fields: ["title"]
+
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
@@ -339,8 +385,8 @@ collections:
 
           - label: 'Featured Products'
             name: 'featured_products'
-            widget: relation
+            widget: 'relation'
             collection: 'products'
-            search_fields: ['title', 'excerpt']
-            value_field: title
-            multiple: true
+            search_fields: ["title"]
+            value_field: "/products/{{slug}}"
+            display_fields: ["title"]

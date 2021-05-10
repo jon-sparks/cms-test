@@ -1,9 +1,10 @@
 <template>
   <div class="container main">
-    <Banner
+    <HomeBanner />
+    <!-- <Banner
       :image="home.banner.image"
       :text="home.banner.banner_text"
-    />
+    /> -->
     <Content
       :content="home"
     />

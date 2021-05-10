@@ -5,7 +5,7 @@
         to="/"
         class="logo-link"
       >
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Android_O_Preview_Logo.png/240px-Android_O_Preview_Logo.png" alt="">
+        <img src="https://res.cloudinary.com/doqfxofg6/image/upload/v1620676628/CRUX_LOGO_WHITE_RGB-01_lpkoqv.png" alt="">
       </nuxt-link>
       <nav>
         <nuxt-link
@@ -74,7 +74,7 @@ header {
 }
 
 .logo-link {
-  height: 80px;
+  height: 70px;
 }
 .logo-link img {
   height: 100%;
