@@ -1,6 +1,6 @@
 ---
 site_name: Template Site
-logo: /
+logo: https://res.cloudinary.com/doqfxofg6/image/upload/v1620676628/CRUX_LOGO_WHITE_RGB-01_lpkoqv.png
 social:
   - social_media:
       title: facebook
