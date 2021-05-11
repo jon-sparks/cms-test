@@ -27,6 +27,7 @@ sections:
   - type: image
     image: https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg
     alt: Japan Landscape
+    cloudinary_id: landscape-panorama
   - type: image_by_text
     text: >-
       <!--StartFragment-->
