@@ -9,31 +9,12 @@
 
     <section class="home-about main-width">
 
-      <div class="home-product">
-        <nuxt-link
-          to="/"
-        >
-          <img src="~/assets/images/solhome.jpg" alt="">
-          <div class="product-overlay">
-            <div>
-              Some stuff
-            </div>
-          </div>
-        </nuxt-link>
+      <HomeFeature
+        v-for="(wheel, index) in page[0].features_wheels"
+        :key="index"
+        :wheel="wheel"
+      />
 
-      </div>
-      <div class="home-product">
-        <nuxt-link
-          to="/"
-        >
-          <img src="~/assets/images/doradohome.jpg" alt="">
-          <div class="product-overlay">
-            <div>
-              Some stuff
-            </div>
-          </div>
-        </nuxt-link>
-      </div>
     </section>
 
     <!-- <Insta /> -->

@@ -7,6 +7,7 @@ public_folder: /img
 
 media_library:
   name: cloudinary
+  output_filename_only: true
   config:
     cloud_name: doqfxofg6
     api_key: 377681459167741
@@ -55,13 +56,20 @@ collections:
         name: 'features_wheels'
         widget: list
         types:
-          - label: 'Wheel'
-            name: 'wheel'
-            widget: relatio
-            collection: 'products'
-            search_fields: ["title"]
-            value_field: "/products/{{slug}}"
-            display_fields: ["title"]
+          - label: 'Wheels'
+            name: 'wheels'
+            widget: object
+            fields:
+            - label: 'Wheel'
+              name: 'wheel'
+              widget: relation
+              collection: 'products'
+              search_fields: ["title"]
+              value_field: "/products/{{slug}}"
+              display_fields: ["title"]
+            - label: 'Image'
+              name: 'image'
+              widget: image
 
   - name: 'index'
     label: 'Index'
