@@ -5,7 +5,7 @@ list:
   - things
 banner:
   image: https://res.cloudinary.com/doqfxofg6/image/upload/v1618298884/pexels-tobias-bj%C3%B8rkli-2387966_1_hdtbjr.jpg
-  banner_text: Welcome
+  banner_text: Welcomes
 features_wheels:
   - type: wheels
     wheel: /products/dorado
