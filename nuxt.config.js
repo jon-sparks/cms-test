@@ -48,10 +48,15 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxt/content',
+    '@nuxtjs/cloudinary',
     ['nuxt-stripe-module', {
       publishableKey: 'pk_test_51H7j1aASANJqFs3Wcfr4qbv93AuoVzqLonZLLYqcbSgOXlWbyVrd3qJUn6zMe57ywNeY5rBVBvAwpSXQP86LlrdS00YIMrZFh2',
     }]
   ],
+
+  cloudinary: {
+    cloudName: 'doqfxofg6',
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

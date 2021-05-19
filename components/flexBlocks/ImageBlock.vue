@@ -1,7 +1,7 @@
 <template>
   <section class="full-width-image">
     <img
-      :src="section.image"
+      :src="src"
       :alt="section.alt"
       loading="lazy"
     >
@@ -10,7 +10,14 @@
 
 <script>
 export default {
-  props: [`section`]
+  props: [`section`],
+  data () {
+    return {
+      src: this.$cloudinary.image.url(`pexels-quang-nguyen-vinh-2166711_unxg3w`, {
+        width: 1920,
+      })
+    }
+  }
 }
 </script>
 
