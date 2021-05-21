@@ -7,7 +7,6 @@ public_folder: /img
 
 media_library:
   name: cloudinary
-  output_filename_only: true
   config:
     cloud_name: doqfxofg6
     api_key: 377681459167741

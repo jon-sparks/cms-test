@@ -1,20 +1,18 @@
 // insta api token: IGQVJWUWVDRWxrMHZAtcEU3ZA1VUMmhWMFdLSUJXTzFhektBS2t2N3J5aVlHSS1CbXNuM3IxMnF0bnBkbk5LNklTb250MXpqSmRmVWwwbkhKTW1JdHIyS0d5OVBQc2Y1WUdHUlNVQ2FyakxnUklNbnktUAZDZD
 <template>
   <div class="container main">
+    
     <HomeBanner />
-    <!-- <Banner
-      :image="home.banner.image"
-      :text="home.banner.banner_text"
-    /> -->
 
-    <section class="home-about main-width">
-
-      <HomeFeature
-        v-for="(wheel, index) in page[0].features_wheels"
-        :key="index"
-        :wheel="wheel"
-      />
-
+    <section class="home-feature main-width">
+      <h2>Discover</h2>
+      <div class="home-feature__container">
+        <HomeFeature
+          v-for="(wheel, index) in page[0].features_wheels"
+          :key="index"
+          :wheel="wheel"
+        />
+      </div>
     </section>
 
     <!-- <Insta /> -->
@@ -65,69 +63,41 @@ export default {
   padding-top: 15px;
 }
 
-.home-about {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.home-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0 0;
 
-  .home-product {
-    width: 100%;
-    padding: 6rem;
+  h2 {
+    position: relative;
+    font-size: 70px;
+    color: black;
 
-    &:first-of-type {
-      padding-right: 3rem;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 21px;
+      left: -5%;
+      width: 70%;
+      height: 25px;
+      z-index: -1;
+      background: var(--primary);
     }
-    &:last-of-type {
-      padding-left: 3rem;
-    }
+  }
 
-    & > a {
-      position: relative;
-      display: block;
-      overflow: hidden;
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
 
-      &:hover,
-      &:focus {
+@media(min-width: 480px) {
+  .home-feature {
 
-        img {
-          transform: scale(1.1);
-        }
-
-        .product-overlay {
-          opacity: 1;
-        }
-      }
-
-      .product-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity ease .3s;
-
-        & > div {
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 80%;
-          height: 80%;
-          border: solid 1px var(--primary);
-        }
-      }
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform ease .3s;
+    &__container {
+      grid-template-columns: 1fr 1fr;
     }
   }
 }
