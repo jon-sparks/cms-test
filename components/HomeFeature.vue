@@ -126,7 +126,7 @@ export default {
       background: rgba(0,0,0,.8);
 
       & > div h3 {
-        font-size: 70px;
+        font-size: 55px;
       }
     }
   }

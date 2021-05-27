@@ -69,6 +69,11 @@ collections:
             - label: 'Image'
               name: 'image'
               widget: image
+      - label: 'Image Gallery'
+        name: 'image_gallery'
+        widget: list
+        fields:
+        - { label: Image, name: image, widget: image }
 
   - name: 'index'
     label: 'Index'
@@ -413,6 +418,12 @@ collections:
               widget: object
               fields:
               - { label: Text, name: text, widget: string }
+
+          - label: 'Image Gallery'
+            name: 'image_gallery'
+            widget: list
+            fields:
+            - { label: Image, name: image, widget: image }
 
           - label: 'Featured Products'
             name: 'featured_products'

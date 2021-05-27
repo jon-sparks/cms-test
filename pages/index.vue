@@ -15,6 +15,10 @@
       </div>
     </section>
 
+    <Gallery
+      :gallery="home.image_gallery"
+    />
+
     <!-- <Insta /> -->
 
     <Content
@@ -97,7 +101,7 @@ export default {
   .home-feature {
 
     &__container {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }
