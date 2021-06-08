@@ -7,14 +7,32 @@
     >
       <GalleryThumbnail
         :image="image"
+        @click.native="setGalleryStatus(image)"
       />
     </AspectRatio>
+    <GalleryOverlay
+      v-if="galleryOpen"
+      :setGalleryStatus="setGalleryStatus"
+      :image="selectedImage"
+    />
   </section>
 </template>
 
 <script>
 export default {
-  props: ['gallery']
+  props: ['gallery'],
+  data () {
+    return {
+      selectedImage: null,
+      galleryOpen: false,
+    }
+  },
+  methods: {
+    setGalleryStatus (image) {
+      this.selectedImage = image
+      this.galleryOpen = !this.galleryOpen
+    }
+  }
 };
 </script>
 
