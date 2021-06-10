@@ -7,7 +7,7 @@ export default {
   props: ['image'],
   data () {
     return {
-      src: this.$cloudinary.image.url(`/${this.getId(this.image.image)}`, {
+      src: this.$cloudinary.image.url(`/${this.getId(this.image)}`, {
         width: 250,
         height: 250,
         crop: 'fill'

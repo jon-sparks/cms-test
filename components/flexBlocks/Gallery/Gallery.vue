@@ -1,7 +1,7 @@
 <template>
   <section class="gallery">
     <AspectRatio
-      v-for="(image, id) in gallery"
+      v-for="(image, id) in images"
       :key="id"
       ratio="1:1"
     >
@@ -14,6 +14,7 @@
       v-if="galleryOpen"
       :setGalleryStatus="setGalleryStatus"
       :image="selectedImage"
+      @navigate="setSelectedImage($event, nextImage)"
     />
   </section>
 </template>
@@ -31,6 +32,32 @@ export default {
     setGalleryStatus (image) {
       this.selectedImage = image
       this.galleryOpen = !this.galleryOpen
+    },
+    setSelectedImage (direction = null, image = null) {
+      if (direction === `next`) {
+        this.selectedImage = this.nextImage
+      } else if (direction === `prev`) {
+        this.selectedImage = this.prevImage
+      } else {
+        this.selectedImage = image
+      }
+    }
+  },
+  computed: {
+    images () {
+      return this.gallery.map(item => item.image)
+    },
+    nextImage () {
+      if (this.images.indexOf(this.selectedImage) + 1 === this.images.length) {
+        return this.images[0]
+      }
+      return this.images[this.images.indexOf(this.selectedImage) + 1]
+    },
+    prevImage () {
+      if (this.images.indexOf(this.selectedImage) - 1 === -1) {
+        return this.images[this.images.length - 1]
+      }
+      return this.images[this.images.indexOf(this.selectedImage) - 1]
     }
   }
 };
