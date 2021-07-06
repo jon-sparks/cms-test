@@ -3,24 +3,30 @@
     :class="{ 'content-width standard' : !section.full_width }"
     class="carousel"
   >
-    <client-only>
-      <swiper
-        :options="carouselOptions"
-      >
-        <swiper-slide
-          v-for="(slide, index) in section.slide"
-          :key="index"
-        >
-          <img
-            :src="slide.image.image"
-            :alt="slide.image.alt"
+    <AspectRatio
+      ratio="16:9"
+    >
+      <div class="carousel__wrapper">
+        <client-only>
+          <swiper
+            :options="carouselOptions"
           >
-        </swiper-slide>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
-      </swiper>
-      <div class="swiper-pagination"></div>
-    </client-only>
+            <swiper-slide
+              v-for="(slide, index) in section.slide"
+              :key="index"
+            >
+              <img
+                :src="slide.image.image"
+                :alt="slide.image.alt"
+              >
+            </swiper-slide>
+            <div class="swiper-button-prev" slot="button-prev"></div>
+            <div class="swiper-button-next" slot="button-next"></div>
+          </swiper>
+          <div class="swiper-pagination"></div>
+        </client-only>
+      </div>
+    </AspectRatio>
   </section>
 </template>
 
@@ -49,7 +55,13 @@ export default {
 .carousel {
   position: relative;
   width: 100%;
-  /* height: 35vw; */
+  height: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  &__wrapper {
+    height: 100%;
+  }
 }
 
 .swiper-pagination {
@@ -77,14 +89,18 @@ export default {
   height: 14px;
 }
 
+/deep/.swiper-container {
+  height: 100%;
+}
+
 .carousel /deep/.swiper-slide img {
-  height: 35vw;
+  height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;
 }
 
 .carousel.standard /deep/.swiper-slide img {
-  height: 30vw;
+  height: 100%;
 }
 </style>

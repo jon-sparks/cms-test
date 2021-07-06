@@ -4,9 +4,13 @@
     @click.self="setGalleryStatus"
   >
     <button
+      class="gallery-overlay__nav-button"
       @click="navigate(`prev`)"
     >
-      Prev
+      <Arrow
+        left
+        :width="25"
+      />
     </button>
     <div class="gallery-overlay__image-wrapper">
       <img
@@ -16,9 +20,12 @@
       >
     </div>
     <button
+      class="gallery-overlay__nav-button"
       @click="navigate(`next`)"
     >
-      Next
+      <Arrow
+        :width="25"
+      />
     </button>
   </section>
 </template>
@@ -91,6 +98,16 @@ export default {
       display: block;
       box-shadow: 0px 0px 20px 0px rgba(0,0,0,.6);
     }
+  }
+
+  &__nav-button {
+    min-width: 60px;
+    min-height: 60px;
+    margin: 2rem;
+    background: none;
+    border: solid 4px white;
+    border-radius: 100px;
+    cursor: pointer;
   }
 }
 </style>

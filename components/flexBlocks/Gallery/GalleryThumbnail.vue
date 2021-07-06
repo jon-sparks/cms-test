@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" alt="" loading="lazy">
+  <img :src="src" alt="gallery image" loading="lazy">
 </template>
 
 <script>
@@ -26,5 +26,6 @@ export default {
 
 <style lang="scss" scoped>
   img {
+    cursor: pointer;
   }
 </style>

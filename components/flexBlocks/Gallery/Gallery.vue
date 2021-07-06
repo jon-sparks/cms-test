@@ -68,5 +68,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   place-items: stretch;
+  padding: 2rem 0;
 }
 </style>
