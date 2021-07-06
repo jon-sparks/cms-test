@@ -22,13 +22,20 @@ export default {
 </script>
 
 <style scoped>
-  .full-width-image {
-    padding: 2rem 0;
-  }
+.full-width-image {
+  padding: 2rem 0;
+}
+.full-width-image img {
+  width: 100%;
+  height: 50vw;
+  max-height: 700px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media(min-width: 480px) {
   .full-width-image img {
-    width: 100%;
-    height: 35vw;
-    object-fit: cover;
-    object-position: center;
+    height: 38vw;
   }
+}
 </style>
