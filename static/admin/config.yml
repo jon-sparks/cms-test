@@ -145,9 +145,13 @@ collections:
 
         - label: 'Image Gallery'
           name: 'image_gallery'
-          widget: list
+          widget: object
           fields:
-          - { label: Image, name: image, widget: image }
+          - label: 'Gallery Items'
+            name: 'gallery_items'
+            widget: list
+            fields:
+            - { label: Image, name: image, widget: image }
 
         - label: 'Featured Products'
           name: 'featured_products'
