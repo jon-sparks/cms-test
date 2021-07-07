@@ -4,26 +4,21 @@
     
     <HomeBanner />
 
-    <section class="home-feature main-width">
+    <!-- <section class="home-feature main-width">
       <h2>Discover</h2>
       <div class="home-feature__container">
-        <HomeFeature
+        <Featured
           v-for="(wheel, index) in page[0].features_wheels"
           :key="index"
           :wheel="wheel"
         />
       </div>
-    </section>
+    </section> -->
 
-    <Gallery
-      :gallery="home.image_gallery"
+    <Flexible
+      :sections="home.sections"
     />
 
-    <!-- <Insta /> -->
-
-    <Content
-      :content="home"
-    />
   </div>
 </template>
 
@@ -65,44 +60,5 @@ export default {
 
 .links {
   padding-top: 15px;
-}
-
-.home-feature {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem 0 0;
-
-  h2 {
-    position: relative;
-    font-size: 70px;
-    color: black;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 21px;
-      left: -5%;
-      width: 70%;
-      height: 25px;
-      z-index: -1;
-      background: var(--primary);
-    }
-  }
-
-  &__container {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-}
-
-@media(min-width: 480px) {
-  .home-feature {
-
-    &__container {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
 }
 </style>

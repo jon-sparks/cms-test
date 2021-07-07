@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  props: ['gallery'],
+  props: ['section'],
   data () {
     return {
       selectedImage: null,
@@ -45,7 +45,7 @@ export default {
   },
   computed: {
     images () {
-      return this.gallery.map(item => item.image)
+      return this.section.gallery_items.map(item => item.image)
     },
     nextImage () {
       if (this.images.indexOf(this.selectedImage) + 1 === this.images.length) {

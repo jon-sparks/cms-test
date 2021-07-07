@@ -155,11 +155,19 @@ collections:
 
         - label: 'Featured Products'
           name: 'featured_products'
-          widget: 'relation'
-          collection: 'products'
-          search_fields: ["title"]
-          value_field: "/products/{{slug}}"
-          display_fields: ["title"]
+          widget: object
+          fields:
+          - label: 'Products'
+            name: 'products'
+            widget: list
+            fields:
+            - label: 'product'
+              name: 'product'
+              widget: 'relation'
+              collection: 'products'
+              search_fields: ["title"]
+              value_field: "/products/{{slug}}"
+              display_fields: ["title"]
 
   - name: 'index'
     label: 'Index'

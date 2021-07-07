@@ -38,6 +38,18 @@
         :section="section"
       />
 
+      <Gallery
+        v-else-if="section.type === 'image_gallery'"
+        :key="index"
+        :section="section"
+      />
+
+      <Featured
+        v-else-if="section.type === 'featured_products'"
+        :key="index"
+        :section="section"
+      />
+
     </template>
   </section>
 </template>

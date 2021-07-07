@@ -1,7 +1,7 @@
 <template>
   <div class="home-product">
     <nuxt-link
-      :to="wheel.wheel"
+      to="/"
     >
       <img :src="src" alt="" loading="lazy">
       <div class="product-overlay">
@@ -18,11 +18,11 @@ export default {
   props: ['wheel'],
   data () {
     return {
-      src: this.$cloudinary.image.url(`/${this.getId(this.wheel.image)}`, {
-        width: 800,
-        height: 800,
-        crop: 'scale'
-      }),
+      // src: this.$cloudinary.image.url(`/${this.getId(this.product['featured-image'])}`, {
+      //   width: 800,
+      //   height: 800,
+      //   crop: 'scale'
+      // }),
       product: null,
     }
   },
@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     async getProd () {
-      const post = await this.$content(this.wheel.wheel).fetch();
+      const post = await this.$content(this.wheel.products).fetch();
       this.product = await post;
     },
     getId (path) {
@@ -43,7 +43,17 @@ export default {
   computed: {
     name () {
       return this.product?.title
-    }
+    },
+    src () {
+      if (this.product) {
+        return this.$cloudinary.image.url(`/${this.getId(this.product['featured-image'])}`, {
+          width: 800,
+          height: 800,
+          crop: 'scale'
+        })
+      }
+      return false
+    },
   }
 }
 
