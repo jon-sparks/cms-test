@@ -27,6 +27,12 @@ image_gallery:
   - image: https://res.cloudinary.com/doqfxofg6/image/upload/v1613035620/IMG_9711_cs3amr.jpg
   - image: https://res.cloudinary.com/doqfxofg6/image/upload/v1613035083/sample.jpg
 sections:
+  - type: text_block
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.
   - type: image_gallery
     gallery_items:
       - image: https://res.cloudinary.com/doqfxofg6/image/upload/v1621408811/doradohome_el333k.jpg
@@ -34,11 +40,19 @@ sections:
       - image: https://res.cloudinary.com/doqfxofg6/image/upload/v1613551461/pexels-quang-nguyen-vinh-2166711_unxg3w.jpg
       - image: https://res.cloudinary.com/doqfxofg6/image/upload/v1613035620/IMG_9711_cs3amr.jpg
       - image: https://res.cloudinary.com/doqfxofg6/image/upload/v1618298884/pexels-tobias-bj%C3%B8rkli-2387966_1_hdtbjr.jpg
+  - type: text_block
+    text: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+      deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   - type: featured_products
     products:
       - products: /products/dorado
+        product: /products/sol
       - products: /products/sol
+        product: /products/dorado
       - products: /products/beef-burger
+        product: /products/chicken-burger
       - products: /products/chicken-burger
+        product: /products/beef-burger
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
