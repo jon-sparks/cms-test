@@ -34,6 +34,22 @@ html {
   padding: 0 1rem;
 }
 
+.underlined-title {
+  position: relative;
+  font-size: 70px;
+  color: black;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 21px;
+    left: -5%;
+    width: 70%;
+    height: 25px;
+    z-index: -1;
+    background: var(--primary);
+  }
+}
 
 // Transitions
 

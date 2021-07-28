@@ -1,21 +1,25 @@
 <template>
   <section class="gallery">
-    <AspectRatio
-      v-for="(image, id) in images"
-      :key="id"
-      ratio="1:1"
-    >
-      <GalleryThumbnail
-        :image="image"
-        @click.native="setGalleryStatus(image)"
+    <h2 class="underlined-title">Gallery</h2>
+    <div class="gallery-wrapper">
+      <AspectRatio
+        v-for="(image, id) in images"
+        :key="id"
+        ratio="1:1"
+        class="gallery__image"
+      >
+        <GalleryThumbnail
+          :image="image"
+          @click.native="setGalleryStatus(image)"
+        />
+      </AspectRatio>
+      <GalleryOverlay
+        v-if="galleryOpen"
+        :setGalleryStatus="setGalleryStatus"
+        :image="selectedImage"
+        @navigate="setSelectedImage($event, nextImage)"
       />
-    </AspectRatio>
-    <GalleryOverlay
-      v-if="galleryOpen"
-      :setGalleryStatus="setGalleryStatus"
-      :image="selectedImage"
-      @navigate="setSelectedImage($event, nextImage)"
-    />
+    </div>
   </section>
 </template>
 
@@ -65,9 +69,19 @@ export default {
 
 <style lang="scss" scoped>
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  place-items: stretch;
-  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 2rem 0;
+  }
+
+  &__image {
+    width: 20%;
+  }
 }
 </style>

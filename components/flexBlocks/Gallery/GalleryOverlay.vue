@@ -4,7 +4,7 @@
     @click.self="setGalleryStatus"
   >
     <button
-      class="gallery-overlay__nav-button"
+      class="gallery-overlay__nav-button gallery-overlay__nav-button--prev"
       @click="navigate(`prev`)"
     >
       <Arrow
@@ -20,7 +20,7 @@
       >
     </div>
     <button
-      class="gallery-overlay__nav-button"
+      class="gallery-overlay__nav-button gallery-overlay__nav-button--next"
       @click="navigate(`next`)"
     >
       <Arrow
@@ -89,12 +89,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 999;
 
   &__image-wrapper {
     position: relative;
+    width: 95%;
 
     img {
+      width: 100%;
       display: block;
       box-shadow: 0px 0px 20px 0px rgba(0,0,0,.6);
     }
@@ -105,9 +107,32 @@ export default {
     min-height: 60px;
     margin: 2rem;
     background: none;
-    border: solid 4px white;
+    border: none;
     border-radius: 100px;
     cursor: pointer;
+    position: absolute;
+    z-index: 1;
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+}
+
+@media(min-width: 640px) {
+  .gallery-overlay {
+
+    &__image-wrapper {
+      width: auto;
+    }
+
+    &__nav-button {
+      position: relative;
+    }
   }
 }
 </style>

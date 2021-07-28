@@ -26,7 +26,7 @@
 export default {
   props: {
     button: {
-      default: {}
+      default: () => {}
     },
     submit: {
       default: false
