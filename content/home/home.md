@@ -47,6 +47,28 @@ sections:
     text: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
       deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non
       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  - type: image_by_text
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam
+    image:
+      image: https://res.cloudinary.com/doqfxofg6/image/upload/v1618298884/pexels-tobias-bj%C3%B8rkli-2387966_1_hdtbjr.jpg
+      alt: an image
+    button:
+      text: go there
+      external_link: true
+      link: https://www.google.com
+  - type: image_by_text
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam
+    image:
+      image: https://res.cloudinary.com/doqfxofg6/image/upload/v1613551461/pexels-quang-nguyen-vinh-2166711_unxg3w.jpg
+      alt: image
+    button:
+      external_link: true
+      text: go here
+      link: https://www.google.com
   - type: image_gallery
     gallery_items:
       - image: https://res.cloudinary.com/doqfxofg6/image/upload/v1621408811/doradohome_el333k.jpg
