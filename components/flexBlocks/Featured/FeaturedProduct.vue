@@ -1,15 +1,17 @@
 <template>
   <div class="home-product">
-    <nuxt-link
-      to="/"
-    >
-      <img :src="src" alt="" loading="lazy">
-      <div class="product-overlay">
-        <div>
-          <h3>{{ name }}</h3>
+    <client-only>
+      <nuxt-link
+        to="/"
+      >
+        <img :src="src" alt="" loading="lazy">
+        <div class="product-overlay">
+          <div>
+            <h3>{{ name }}</h3>
+          </div>
         </div>
-      </div>
-    </nuxt-link>
+      </nuxt-link>
+    </client-only>
   </div>
 </template>
 

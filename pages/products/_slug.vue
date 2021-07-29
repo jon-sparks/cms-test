@@ -7,10 +7,10 @@
     <div class="main-width">
       <h2>{{ post.title }}</h2>
 
-      <Configurator
+      <!-- <Configurator
         v-if="post.enable_configurator"
         :sections="post.configurator_options"
-      />
+      /> -->
 
       <button @click="addToBasket">Add to basket</button>
       <nuxt-content :document="post" />
