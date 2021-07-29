@@ -31,8 +31,8 @@ sections:
     products:
       - product: https://happy-wright-60116a.netlify.app/products/sol
       - product: https://happy-wright-60116a.netlify.app/products/dorado
-      - product: https://happy-wright-60116a.netlify.app/products/beef-burger
       - product: https://happy-wright-60116a.netlify.app/products/chicken-burger
+      - product: https://happy-wright-60116a.netlify.app/products/beef-burger
   - type: text_block
     text: >-
       ### Excepteur sint occaecat cupidatat non proident
