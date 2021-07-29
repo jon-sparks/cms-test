@@ -29,10 +29,10 @@ image_gallery:
 sections:
   - type: featured_products
     products:
-      - product: https://happy-wright-60116a.netlify.app/products/products/sol
-      - product: https://happy-wright-60116a.netlify.app/products/products/dorado
-      - product: https://happy-wright-60116a.netlify.app/products/products/chicken-burger
-      - product: https://happy-wright-60116a.netlify.app/products/products/beef-burger
+      - product: https://happy-wright-60116a.netlify.app/products/sol
+      - product: https://happy-wright-60116a.netlify.app/products/dorado
+      - product: https://happy-wright-60116a.netlify.app/products/beef-burger
+      - product: https://happy-wright-60116a.netlify.app/products/chicken-burger
   - type: text_block
     text: >-
       ### Excepteur sint occaecat cupidatat non proident
