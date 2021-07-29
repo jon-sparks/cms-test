@@ -3,11 +3,11 @@
     <nuxt-link
       to="/"
     >
-      <!-- <img :src="src" alt="" loading="lazy"> -->
+      <img :src="src" alt="" loading="lazy">
       <div class="product-overlay">
-        <!-- <div>
+        <div>
           <h3>{{ name }}</h3>
-        </div> -->
+        </div>
       </div>
     </nuxt-link>
   </div>
