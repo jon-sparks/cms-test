@@ -29,7 +29,10 @@ image_gallery:
 sections:
   - type: featured_products
     products:
-      - product: https://happy-wright-60116a.netlify.app/products/sol
+      - product: products/sol
+      - product: products/dorado
+      - product: products/chicken-burger
+      - product: products/beef-burger
   - type: text_block
     text: >-
       ### Excepteur sint occaecat cupidatat non proident
