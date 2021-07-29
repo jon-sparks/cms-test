@@ -27,7 +27,9 @@ export default {
     }
   },
   mounted () {
-    this.getProd();
+    this.$nextTick(() => {
+      this.getProd();
+    })
   },
   methods: {
     async getProd () {
