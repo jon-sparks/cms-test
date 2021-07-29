@@ -14,7 +14,7 @@
     "babel-runtime": "^6.26.0",
     "core-js": "^3.8.3",
     "node-sass": "^5.0.0",
-    "nuxt": "^2.14.12",
+    "nuxt": "^2.15.7",
     "nuxt-stripe-module": "^3.0.1",
     "sass-loader": "^10.1.1",
     "swiper": "^6.4.15",

@@ -55,9 +55,7 @@
 </template>
 
 <script>
-import Contact from './flexBlocks/Contact.vue'
 export default {
-  components: { Contact },
   props: [`sections`]
 }
 </script>
