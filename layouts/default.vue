@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Basket 
+    <!-- <Basket 
       v-if="basketStatus"
-    />
+    /> -->
     <Header />
     <Nuxt />
     <Footer />

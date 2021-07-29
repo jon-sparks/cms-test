@@ -15,7 +15,7 @@
         >
           {{ item.title }}
         </nuxt-link>
-        <BasketButton />
+        <!-- <BasketButton /> -->
       </nav>
     </div>
   </header>
