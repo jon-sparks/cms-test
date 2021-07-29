@@ -166,7 +166,7 @@ collections:
               widget: 'relation'
               collection: 'products'
               search_fields: ["title"]
-              value_field: "https://happy-wright-60116a.netlify.app/products/{{slug}}"
+              value_field: "products/{{slug}}"
               display_fields: ["title"]
 
   - name: 'index'
@@ -532,5 +532,5 @@ collections:
                 widget: 'relation'
                 collection: 'products'
                 search_fields: ["title"]
-                value_field: "https://happy-wright-60116a.netlify.app/products/{{slug}}"
+                value_field: "products/{{slug}}"
                 display_fields: ["title"]
