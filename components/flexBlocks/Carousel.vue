@@ -7,7 +7,7 @@
       ratio="16:9"
     >
       <div class="carousel__wrapper">
-        <client-only>
+        <!-- <client-only>
           <swiper
             :options="carouselOptions"
           >
@@ -24,7 +24,7 @@
             <div class="swiper-button-next" slot="button-next"></div>
           </swiper>
           <div class="swiper-pagination"></div>
-        </client-only>
+        </client-only> -->
       </div>
     </AspectRatio>
   </section>
@@ -69,7 +69,10 @@ export default {
   bottom: 5px;
 }
 
-.swiper-button-next,
+.swiper-button-next {
+  color: white;
+}
+
 .swiper-button-prev {
   color: white;
 }
