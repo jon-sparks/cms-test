@@ -11,9 +11,4 @@ sections:
       velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum
-  - type: contact_form
-    form_name: Contact Page
-    form_title: Contact Us
-    button:
-      text: Send
 ---
