@@ -75,11 +75,25 @@ sections:
       link: https://www.google.com
   - type: image_gallery
     gallery_items:
-      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647789/standard%20wheel%20renders/Wheels_standard_render_environment.117_hpxwv7.jpg
+      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221952/samples/cloudinary-group.jpg
       - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221946/samples/bike.jpg
       - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647738/standard%20wheel%20renders/Wheels_standard_render_environment.113_dyqjyv.jpg
       - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221951/samples/imagecon-group.jpg
-      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647728/standard%20wheel%20renders/Wheels_standard_render_environment.121_iwwfpt.jpg
+      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221944/samples/sheep.jpg
     extra_margin: true
+  - type: text_block
+    extra_margin: true
+    text: >-
+      ### Inventore veritatis et quasi architecto beatae vitae dicta
+
+
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+
+
+      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+  - type: image
+    extra_margin: true
+    image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221952/samples/cloudinary-group.jpg
+    alt: an image
 ---
 Hello
