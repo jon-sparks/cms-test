@@ -56,7 +56,7 @@ sections:
       doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
       inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
     image:
-      image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647789/standard%20wheel%20renders/Wheels_standard_render_environment.117_hpxwv7.jpg
+      image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221944/samples/food/pot-mussels.jpg
       alt: crux orion
     button:
       text: Go There
@@ -67,7 +67,7 @@ sections:
       doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
       inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
     image:
-      image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647722/standard%20wheel%20renders/Wheels_standard_render_environment.109_j08snj.jpg
+      image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221944/samples/food/fish-vegetables.jpg
       alt: crux sol 5
     button:
       text: Go Here
