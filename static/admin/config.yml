@@ -62,14 +62,14 @@ collections:
           name: 'text_block'
           widget: object
           fields:
-          - { label: Extra Margin, name: extra_margin, widget: Boolean, required: false }
+          - { label: Extra Margin, name: extra_margin, widget: boolean, required: false }
           - { label: Text, name: text, widget: markdown }
 
         - label: 'Image'
           name: 'image'
           widget: object
           fields:
-          - { label: Extra Margin, name: extra_margin, widget: Boolean, required: false }
+          - { label: Extra Margin, name: extra_margin, widget: boolean, required: false }
           - { label: Full Width, name: full_width, widget: boolean, required: false }
           - { label: Image, name: image, widget: image, required: false }
           - { label: Cloudinary ID, name: cloudinary_id, widget: string, required: false }
@@ -79,7 +79,7 @@ collections:
           name: 'image_by_text'
           widget: object
           fields:
-          - { label: Extra Margin, name: extra_margin, widget: Boolean, required: false }
+          - { label: Extra Margin, name: extra_margin, widget: boolean, required: false }
           - { label: Text, name: text, widget: markdown }
           - label: 'Image'
             name: 'image'
@@ -126,14 +126,14 @@ collections:
           name: 'video'
           widget: object
           fields:
-          - { label: Extra Margin, name: extra_margin, widget: Boolean, required: false }
+          - { label: Extra Margin, name: extra_margin, widget: boolean, required: false }
           - { label: 'Youtube Embed', name: 'youtube_embed', widget: string }
 
         - label: 'Contact Form'
           name: 'contact_form'
           widget: object
           fields: 
-          - { label: Extra Margin, name: extra_margin, widget: Boolean, required: false }
+          - { label: Extra Margin, name: extra_margin, widget: boolean, required: false }
           - label: 'Form Title'
             name: 'form_title'
             widget: string
@@ -152,7 +152,7 @@ collections:
           name: 'image_gallery'
           widget: object
           fields:
-          - { label: Extra Margin, name: extra_margin, widget: Boolean, required: false }
+          - { label: Extra Margin, name: extra_margin, widget: boolean, required: false }
           - label: 'Gallery Items'
             name: 'gallery_items'
             widget: list
@@ -163,7 +163,7 @@ collections:
           name: 'featured_products'
           widget: object
           fields:
-          - { label: Extra Margin, name: extra_margin, widget: Boolean, required: false }
+          - { label: Extra Margin, name: extra_margin, widget: boolean, required: false }
           - label: 'Products'
             name: 'products'
             widget: list
