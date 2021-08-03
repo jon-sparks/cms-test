@@ -32,12 +32,5 @@ sections:
       - product: products/dorado
       - product: products/chicken-burger
       - product: products/beef-burger
-  - type: featured_products
-    extra_margin: true
-    products:
-      - product: products/sol
-      - product: products/dorado
-      - product: products/chicken-burger
-      - product: products/beef-burger
 ---
 Hello
