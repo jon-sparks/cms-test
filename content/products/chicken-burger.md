@@ -6,9 +6,9 @@ sections:
     title: Some Text
     text: The is text about the chicken burger
 date: 2021-02-16T09:30:15.866Z
-title: Chicken Burger
+title: Orion
 short_description: A chicken burger that looks like a leather bag
-featured-image: https://argusjournal.com/wp-content/uploads/2021/07/tokyo-covid-stste-of-emergency.jpg
+featured-image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647759/standard%20wheel%20renders/Wheels_standard_render_environment.118_bo9svy.jpg
 enable_configurator: true
 configurator_options:
   - option_name: Width (inches)
