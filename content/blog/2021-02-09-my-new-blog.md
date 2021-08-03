@@ -4,7 +4,7 @@ date: 2021-02-09T20:22:45.015Z
 description: A new blog for the new site
 excerpt: An excerpt from this blog. This is a blog and this bit of text is the
   excerpt for this blog.
-featured-image: https://res.cloudinary.com/doqfxofg6/image/upload/v1613035620/IMG_9711_cs3amr.jpg
+featured-image: https://argusjournal.com/wp-content/uploads/2021/07/tokyo-covid-stste-of-emergency.jpg
 sections:
   - type: text_block
     title: A block of text
