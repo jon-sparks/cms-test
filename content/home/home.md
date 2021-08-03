@@ -76,9 +76,9 @@ sections:
   - type: image_gallery
     gallery_items:
       - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647789/standard%20wheel%20renders/Wheels_standard_render_environment.117_hpxwv7.jpg
-      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221952/samples/landscapes/nature-mountains.jpg
+      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221946/samples/bike.jpg
       - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647738/standard%20wheel%20renders/Wheels_standard_render_environment.113_dyqjyv.jpg
-      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221947/samples/animals/three-dogs.jpg
+      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221951/samples/imagecon-group.jpg
       - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647728/standard%20wheel%20renders/Wheels_standard_render_environment.121_iwwfpt.jpg
     extra_margin: true
 ---
