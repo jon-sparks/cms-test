@@ -51,5 +51,27 @@ sections:
 
 
       Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+  - type: image_by_text
+    text: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+      doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    image:
+      image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647789/standard%20wheel%20renders/Wheels_standard_render_environment.117_hpxwv7.jpg
+      alt: crux orion
+    button:
+      text: Go There
+      external_link: true
+      link: https://www.google.com
+  - type: image_by_text
+    text: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+      doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    image:
+      image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647722/standard%20wheel%20renders/Wheels_standard_render_environment.109_j08snj.jpg
+      alt: crux sol 5
+    button:
+      text: Go Here
+      external_link: true
+      link: https://www.google.com
 ---
 Hello
