@@ -73,5 +73,13 @@ sections:
       text: Go Here
       external_link: true
       link: https://www.google.com
+  - type: image_gallery
+    gallery_items:
+      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647789/standard%20wheel%20renders/Wheels_standard_render_environment.117_hpxwv7.jpg
+      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647757/standard%20wheel%20renders/Wheels_standard_render_environment.116_bh2qgt.jpg
+      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647738/standard%20wheel%20renders/Wheels_standard_render_environment.113_dyqjyv.jpg
+      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647722/standard%20wheel%20renders/Wheels_standard_render_environment.109_j08snj.jpg
+      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647728/standard%20wheel%20renders/Wheels_standard_render_environment.121_iwwfpt.jpg
+    extra_margin: true
 ---
 Hello
