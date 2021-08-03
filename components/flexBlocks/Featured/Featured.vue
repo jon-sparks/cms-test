@@ -1,5 +1,8 @@
 <template>
-  <section class="home-feature main-width">
+  <section
+    class="home-feature main-width"
+    :class="{ 'extra-margin' : section.extra_margin }"
+  >
     <h2 class="underlined-title">Discover</h2>
     <div class="home-feature__container">
       <FeaturedProduct
@@ -22,13 +25,16 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 0 0;
 
   &__container {
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
   }
+}
+
+.extra-margin {
+  margin: 5rem auto 6rem;
 }
 
 @media(min-width: 480px) {

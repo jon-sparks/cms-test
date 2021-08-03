@@ -1,5 +1,8 @@
 <template>
-  <section class="content-width">
+  <section
+    class="content-width"
+    :class="{ 'extra-margin' : section.extra_margin }"
+  >
     <div class="rich-text" v-html="md" />
   </section>
 </template>
@@ -50,5 +53,9 @@ export default {
       }
     }
   }
+}
+
+.extra-margin {
+  margin: 7rem auto;
 }
 </style>

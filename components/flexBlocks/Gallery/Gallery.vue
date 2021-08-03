@@ -1,5 +1,8 @@
 <template>
-  <section class="gallery">
+  <section
+    class="gallery"
+    :class="{ 'extra-margin' : section.extra_margin }"
+  >
     <h2 class="underlined-title">Gallery</h2>
     <div class="gallery-wrapper">
       <AspectRatio
@@ -83,5 +86,9 @@ export default {
   &__image {
     width: 20%;
   }
+}
+
+.extra-margin {
+  margin: 5rem auto 6rem;
 }
 </style>

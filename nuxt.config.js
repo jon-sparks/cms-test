@@ -60,7 +60,7 @@ export default {
   ],
 
   cloudinary: {
-    cloudName: 'doqfxofg6',
+    cloudName: 'crux-wheels',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
