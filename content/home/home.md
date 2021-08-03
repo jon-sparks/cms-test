@@ -36,5 +36,8 @@ sections:
     extra_margin: true
     products:
       - product: products/sol
+      - product: products/dorado
+      - product: products/chicken-burger
+      - product: products/beef-burger
 ---
 Hello
