@@ -2,7 +2,7 @@
   <div class="home-product">
     <client-only>
       <nuxt-link
-        to="/"
+        :to="`/${wheel.product}`"
       >
         <img :src="src" alt="" loading="lazy">
         <div class="product-overlay">
