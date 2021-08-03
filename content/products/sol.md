@@ -5,6 +5,6 @@ short_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
   minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
   commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
   esse cillum dolore eu fugiat nulla pariatur.
-featured-image: https://argusjournal.com/wp-content/uploads/2021/07/tokyo-covid-stste-of-emergency.jpg
+featured-image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647720/standard%20wheel%20renders/Wheels_standard_render_environment.107_rwwgd8.jpg
 enable_configurator: true
 ---
