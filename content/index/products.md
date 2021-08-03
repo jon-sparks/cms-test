@@ -2,7 +2,7 @@
 menu-order: 2
 title: Products
 banner:
-  image: https://res.cloudinary.com/doqfxofg6/image/upload/v1613035620/IMG_9711_cs3amr.jpg
+  image: https://argusjournal.com/wp-content/uploads/2021/07/tokyo-covid-stste-of-emergency.jpg
   banner_text: My Products
 product_feature:
   left_product:
