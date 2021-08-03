@@ -8,7 +8,7 @@ sections:
 date: 2021-02-16T09:30:15.866Z
 title: Chicken Burger
 short_description: A chicken burger that looks like a leather bag
-featured-image: https://res.cloudinary.com/doqfxofg6/image/upload/v1613551461/pexels-quang-nguyen-vinh-2166711_unxg3w.jpg
+featured-image: https://argusjournal.com/wp-content/uploads/2021/07/tokyo-covid-stste-of-emergency.jpg
 enable_configurator: true
 configurator_options:
   - option_name: Width (inches)
