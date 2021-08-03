@@ -33,6 +33,7 @@ sections:
       - product: products/dorado
       - product: products/chicken-burger
       - product: products/beef-burger
+    extra_margin: true
   - type: text_block
     text: >-
       ### Excepteur sint occaecat cupidatat non proident
