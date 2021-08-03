@@ -1,7 +1,7 @@
 ---
 menu-order: 1
 title: About
-featured-image: https://images.pexels.com/photos/2286895/pexels-photo-2286895.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
+featured-image: https://argusjournal.com/wp-content/uploads/2021/07/tokyo-covid-stste-of-emergency.jpg
 sections:
   - type: text_block
     text: >-
