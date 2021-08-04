@@ -39,6 +39,8 @@ sections:
       - product: products/dorado
       - product: products/chicken-burger
       - product: products/beef-burger
+      - product: products/chicken-burger
+      - product: products/sol
   - type: text_block
     extra_margin: true
     text: >-
