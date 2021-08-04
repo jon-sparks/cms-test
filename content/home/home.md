@@ -83,6 +83,8 @@ sections:
       - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647738/standard%20wheel%20renders/Wheels_standard_render_environment.113_dyqjyv.jpg
       - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221951/samples/imagecon-group.jpg
       - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221944/samples/sheep.jpg
+      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221951/samples/imagecon-group.jpg
+      - image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221946/samples/bike.jpg
     extra_margin: true
   - type: text_block
     extra_margin: true
