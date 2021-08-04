@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     getId (path) {
-      const index1 = path.lastIndexOf(`/`)
+      const index1 = path.lastIndexOf(`/`, path.lastIndexOf(`/`)-1)
       const index2 = path.lastIndexOf(`.`)
       return path.substring(index1, index2)
     }

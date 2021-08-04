@@ -4,7 +4,7 @@
       <nuxt-link
         :to="`/${wheel.product}`"
       >
-        <img :src="src" alt="" loading="lazy">
+        <img :src="src" :alt="name" loading="lazy">
         <div class="product-overlay">
           <div>
             <h3>{{ name }}</h3>
@@ -39,7 +39,7 @@ export default {
       this.product = await post;
     },
     getId (path) {
-      const index1 = path.lastIndexOf(`/`)
+      const index1 = path.lastIndexOf(`/`, path.lastIndexOf(`/`)-1)
       const index2 = path.lastIndexOf(`.`)
       return path.substring(index1, index2)
     }
@@ -66,13 +66,12 @@ export default {
 <style lang="scss" scoped>
 .home-product {
   width: 100%;
-  margin-bottom: 2rem;
+  max-width: 400px;
 
   & > a {
     position: relative;
     display: block;
     overflow: hidden;
-    box-shadow: 0 5px 17px -5px rgba(0,0,0,.6);
 
     &:hover,
     &:focus {
@@ -131,9 +130,6 @@ export default {
 
 @media(min-width: 480px) {
   .home-product {
-    width: 100%;
-    padding: 2rem;
-    margin-bottom: 0;
 
     a .product-overlay {
       opacity: 0;

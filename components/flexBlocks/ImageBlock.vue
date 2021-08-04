@@ -13,7 +13,7 @@ export default {
   props: [`section`],
   data () {
     return {
-      src: this.$cloudinary.image.url(`pexels-quang-nguyen-vinh-2166711_unxg3w`, {
+      src: this.$cloudinary.image.url(this.section.image, {
         width: 1920,
       })
     }
