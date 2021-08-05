@@ -43,6 +43,8 @@ sections:
       - product: products/orion-5
       - product: products/beef-burger
       - product: products/imai
+      - product: products/cygnus-a
+      - product: products/cygnus-b
   - type: text_block
     extra_margin: true
     text: >-
