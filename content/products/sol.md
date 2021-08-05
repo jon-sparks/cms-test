@@ -5,6 +5,6 @@ short_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
   minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
   commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
   esse cillum dolore eu fugiat nulla pariatur.
-featured-image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647720/standard%20wheel%20renders/sol4_angle.jpg
+featured-image: https://res.cloudinary.com/crux-wheels/image/upload/v1628192833/PNG%20standard%20wheel%20renders/sol_4_angle_tqmwqq.png
 enable_configurator: true
 ---
