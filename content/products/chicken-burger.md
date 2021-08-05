@@ -8,7 +8,7 @@ sections:
 date: 2021-02-16T09:30:15.866Z
 title: Orion
 short_description: A chicken burger that looks like a leather bag
-featured-image: https://res.cloudinary.com/crux-wheels/image/upload/v1625647759/standard%20wheel%20renders/orion4_angle.jpg
+featured-image: https://res.cloudinary.com/crux-wheels/image/upload/v1628192831/PNG%20standard%20wheel%20renders/orion_4_angle_y1kkas.png
 enable_configurator: true
 configurator_options:
   - option_name: Width (inches)
