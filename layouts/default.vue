@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div ref="main">
     <!-- <Basket 
       v-if="basketStatus"
     /> -->
@@ -17,12 +17,30 @@ export default {
       title: `${this.siteName} | ${this.$route.name}`,
     }
   },
+  data () {
+    return {
+      observer: null,
+    }
+  },
+  mounted () {
+    this.observer = new ResizeObserver(entries => {
+      entries.forEach(entry => {
+        entry.contentRect.width <= 640
+          ? !this.isMobile && this.$store.dispatch(`setIsMobile`, true)
+          : this.isMobile && this.$store.dispatch(`setIsMobile`, false)
+      })
+    })
+    this.observer.observe(this.$refs.main)
+  },
   computed: {
     siteName () {
-      return this.$store.state.settings[0].site_name;
+      return this.$store.state.settings[0].site_name
     },
     basketStatus () {
-      return this.$store.state.basketStatus;
+      return this.$store.state.basketStatus
+    },
+    isMobile () {
+      return this.$store.state.isMobile
     }
   }
 }

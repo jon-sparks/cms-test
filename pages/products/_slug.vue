@@ -1,19 +1,26 @@
 <template>
   <section class="product">
-    <Banner 
+    <ProductBanner 
       :image="post['featured-image']"
       :text="post.title"
     />
     <div class="main-width">
-      <h2>{{ post.title }}</h2>
+      <div class="product__container">
+        <img class="product__main-image" :src="post['featured-image']" alt="">
+        <div>
+          <h1>{{ post.title }}</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque amet placeat sapiente, consectetur tempora eius rerum libero sed nesciunt nulla tempore nihil, nobis optio blanditiis. Quasi illo similique maiores laboriosam?</p>
+        </div>
+      </div>
+      <!-- <h2>{{ post.title }}</h2> -->
 
       <!-- <Configurator
         v-if="post.enable_configurator"
         :sections="post.configurator_options"
       /> -->
 
-      <button @click="addToBasket">Add to basket</button>
-      <nuxt-content :document="post" />
+      <!-- <button @click="addToBasket">Add to basket</button>
+      <nuxt-content :document="post" /> -->
     </div>
   </section>
 </template>
@@ -84,3 +91,15 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.product {
+
+  &__container {
+  }
+
+  &__main-image {
+    width: 50%;
+  }
+}
+</style>

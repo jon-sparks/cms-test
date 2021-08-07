@@ -7,7 +7,34 @@
       >
         <img src="https://res.cloudinary.com/doqfxofg6/image/upload/v1620676628/CRUX_LOGO_WHITE_RGB-01_lpkoqv.png" alt="">
       </nuxt-link>
-      <nav>
+      <transition
+        name="slide"
+      >
+        <nav 
+          class="mobile-nav"
+          v-if="isMobile && mobileActive"
+        >
+          <nuxt-link
+            to="/"
+            class="logo-link"
+          >
+            CRUX
+          </nuxt-link>
+          <nuxt-link
+            v-for="(item, index) in navItems"
+            :key="index"
+            :to="item.navPath"
+          >
+            {{ item.title }}
+          </nuxt-link>
+          <button
+            class="close-mobile"
+            @click="mobileActive = false"
+          >
+          </button>
+        </nav>
+      </transition>
+      <nav v-if="!isMobile && !mobileActive">
         <nuxt-link
           v-for="(item, index) in navItems"
           :key="index"
@@ -17,6 +44,14 @@
         </nuxt-link>
         <!-- <BasketButton /> -->
       </nav>
+      <transition name="fade">
+        <button
+          v-if="isMobile && !mobileActive"
+          @click="mobileActive = !mobileActive"
+        >
+          Menu
+        </button>
+      </transition>
     </div>
   </header>
 </template>
@@ -26,6 +61,12 @@ export default {
   data () {
     return {
       scrolled: false,
+      mobileActive: false,
+    }
+  },
+  watch: {
+    $route () {
+      this.mobileActive = false;
     }
   },
   methods: {
@@ -44,12 +85,15 @@ export default {
   computed: {
     navItems () {
       return this.$store.getters.getSortedNav;
+    },
+    isMobile () {
+      return this.$store.state.isMobile
     }
   }
 }
 </script>
 
-<style scoped>
+<style  lang="scss" scoped>
 header {
   position: absolute;
   top: 0;
@@ -92,5 +136,86 @@ nav a {
   padding: .5rem;
   margin: 0 1rem;
   text-decoration: none;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80vw;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(255,255,255,.7);
+  backdrop-filter: blur(7px);
+  border-right: solid rgb(245, 252, 255) 1px;
+  box-shadow: 3px 0 10px 0 rgba(0,0,0,.2);
+  padding: 2rem 0;
+
+  a {
+    margin: 0;
+    padding: .5rem 2rem;
+    width: 100%;
+    color: rgb(29, 29, 29);
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(180deg, white, rgba(255,255,255,0));
+    z-index: 0;
+  }
+
+  .close-mobile {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1;
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 4px;
+      background: var(--primary);
+      top: 15px;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      left: 0;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      right: 0;
+    }
+  }
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: all ease .5s;
+}
+.slide-enter, .slide-leave-to {
+  transform: translateX(-100%);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all ease .3s;
+}
+.fade-enter, .fade-leave-to {
+  transform: translateY(-30px);
+  opacity: 0;
 }
 </style>

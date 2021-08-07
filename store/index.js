@@ -2,7 +2,8 @@ export const state = () => ({
   nav: [],
   settings: [],
   basketItems: [],
-  basketStatus: false
+  basketStatus: false,
+  isMobile: false,
 });
 
 export const mutations = {
@@ -21,6 +22,9 @@ export const mutations = {
   REMOVE_FROM_BASKET (state, value) {
     state.basketItems.length > 1 ? state.basketItems = state.basketItems.splice(value, 1) : state.basketItems.shift();
   },
+  SET_IS_MOBILE (state, value) {
+    state.isMobile = value;
+  }
 };
 
 export const actions = {
@@ -46,6 +50,9 @@ export const actions = {
   removeFromBasket({ commit }, value) {
     commit(`REMOVE_FROM_BASKET`, value);
   },
+  setIsMobile({ commit }, value) {
+    commit(`SET_IS_MOBILE`, value);
+  }
 };
 
 export const getters = {

@@ -65,19 +65,33 @@ export default {
 
 <style lang="scss" scoped>
 .home-product {
+  position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
+
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 50%;
+  //   background: grey;
+  //   z-index: 0;
+  // }
 
   & > a {
     position: relative;
     display: block;
+    padding: 1rem;
     overflow: hidden;
+    z-index: 1;
 
     &:hover,
     &:focus {
 
       img {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
 
       .product-overlay {
@@ -111,7 +125,7 @@ export default {
           position: absolute;
           bottom: 2rem;
           left: 2rem;
-          font-size: 55px;
+          font-size: 38px;
           margin: 0;
           line-height: 1;
         }
@@ -136,7 +150,7 @@ export default {
       background: rgba(0,0,0,.8);
 
       & > div h3 {
-        font-size: 55px;
+        font-size: 45px;
       }
     }
   }

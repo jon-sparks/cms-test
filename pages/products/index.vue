@@ -4,7 +4,7 @@
       :image="page.banner.image"
       :text="page.banner.banner_text"
     />
-    <section
+    <!-- <section
       :class="hoveredSide && `product-showcase__${hoveredSide}`"
       class="product-showcase"
       ref="showcase"
@@ -42,7 +42,7 @@
         </div>
       </div>
 
-    </section>
+    </section> -->
     <section class="main-width">
       <IndexList
         :items="indexData"
