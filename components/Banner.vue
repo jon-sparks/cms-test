@@ -77,7 +77,7 @@ export default {
 
   img {
     width: 100%;
-    max-height: 900px;
+    max-height: 700px;
     min-height: 300px;
     object-fit: cover;
   }

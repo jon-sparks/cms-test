@@ -1,6 +1,6 @@
 <template>
   <section class="product">
-    <ProductBanner 
+    <Banner 
       :image="post['featured-image']"
       :text="post.title"
     />
