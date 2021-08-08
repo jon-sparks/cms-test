@@ -1,9 +1,10 @@
 <template>
   <section class="banner">
     <transition name="banner" appear>
-      <div class="banner__image" :style="`background-image: url(${image})`">
+      <div class="banner__image">
+        <img :src="image" alt="">
         <transition name="banner-title" appear>
-          <h1>{{ text }}</h1>
+          <h1 class="main-width">{{ text }}</h1>
         </transition>
       </div>
     </transition>
@@ -20,12 +21,11 @@ export default {
 .banner {
   position: relative;
   width: 100%;
-  height: 90vh;
-  // padding-top: 100px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  // margin-bottom: 5rem;
+  margin-bottom: 5rem;
 
   &::after {
     content: '';
@@ -36,31 +36,79 @@ export default {
     height: 330px;
     background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 100%);
   }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 330px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 100%);
+    z-index: 1;
+  }
 }
 
 .banner__image {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: top;
-  background-attachment: fixed;
+
+  img {
+    width: 100%;
+    max-height: 900px;
+    min-height: 550px;
+    object-fit: cover;
+  }
 }
 
 h1 {
-  transform: translateX(20%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-bottom: 4rem;
   text-transform: uppercase;
-  font-size: 95px;
+  font-size: 40px;
   font-weight: bold;
   line-height: 1;
-  color: black;
-  padding: 1rem 3rem;
+  color: white;
   z-index: 1;
-  background: white;
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  mix-blend-mode: screen;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    background: #5f5f5f;
+    bottom: 0;
+    left: 10px;
+    z-index: -1;
+  }
+}
+
+@media(min-width: 480px) {
+  h1 {
+    font-size: 60px;
+
+    &::before {
+      width: 275px;
+      height: 35px;
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  h1 {
+    font-size: 80px;
+
+    &::before {
+      width: 325px;
+      height: 40px;
+      left: 0;
+    }
+  }
 }
 
 .banner-enter-active, .banner-leave-active {
