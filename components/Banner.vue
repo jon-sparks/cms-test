@@ -2,7 +2,7 @@
   <section class="banner">
     <transition name="banner" appear>
       <div class="banner__image">
-        <img :src="image" alt="">
+        <img :src="src" alt="">
         <transition name="banner-title" appear>
           <h1>{{ text }}</h1>
         </transition>
@@ -14,6 +14,24 @@
 <script>
 export default {
   props: [`image`, `text`],
+  computed: {
+    src () {
+      if (this.image) {
+        return this.$cloudinary.image.url(`/${this.getId(this.image)}`, {
+          width: 1920,
+          crop: 'scale'
+        })
+      }
+      return false
+    },
+  },
+  methods: {
+    getId (path) {
+      const index1 = path.lastIndexOf(`/`, path.lastIndexOf(`/`)-1)
+      const index2 = path.lastIndexOf(`.`)
+      return path.substring(index1, index2)
+    },
+  }
 }
 </script>
 
@@ -60,7 +78,7 @@ export default {
   img {
     width: 100%;
     max-height: 900px;
-    min-height: 550px;
+    min-height: 300px;
     object-fit: cover;
   }
 }
@@ -76,6 +94,7 @@ h1 {
   line-height: 1;
   color: var(--primary);
   z-index: 1;
+  margin-top: 4rem;
 
   &::before {
     content: '';
@@ -98,6 +117,10 @@ h1 {
 }
 
 @media(min-width: 768px) {
+  .banner__image img {
+    min-height: 400px
+  }
+
   h1 {
     font-size: 80px;
     padding: 2rem 3rem;
