@@ -47,9 +47,10 @@
       <transition name="fade">
         <button
           v-if="isMobile && !mobileActive"
+          class="burger-button"
           @click="mobileActive = !mobileActive"
         >
-          Menu
+          <div></div>
         </button>
       </transition>
     </div>
@@ -200,6 +201,55 @@ nav a {
     &::after {
       transform: rotate(-45deg);
       right: 0;
+    }
+  }
+}
+
+.burger-button {
+  position: relative;
+  background: none;
+  width: 50px;
+  height: 50px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  div {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: white;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    width: 36px;
+    height: 4px;
+    background: white;
+    transition: all ease .2s;
+  }
+
+  &::before {
+    transform: translate(7px, 15px);
+  }
+
+  &::after {
+    transform: translate(-7px, -15px);
+  }
+
+  &:hover,
+  &:focus-visible {
+
+    &::before {
+      transform: translate(-7px, 15px);
+    }
+
+    &::after {
+      transform: translate(7px, -15px);
     }
   }
 }

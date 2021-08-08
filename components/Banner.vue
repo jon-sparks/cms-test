@@ -4,7 +4,7 @@
       <div class="banner__image">
         <img :src="image" alt="">
         <transition name="banner-title" appear>
-          <h1 class="main-width">{{ text }}</h1>
+          <h1>{{ text }}</h1>
         </transition>
       </div>
     </transition>
@@ -52,7 +52,8 @@ export default {
 .banner__image {
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
 
@@ -66,24 +67,26 @@ export default {
 
 h1 {
   position: absolute;
-  left: 0;
-  right: 0;
-  margin-bottom: 4rem;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
   text-transform: uppercase;
   font-size: 40px;
   font-weight: bold;
   line-height: 1;
-  color: white;
+  color: var(--primary);
   z-index: 1;
 
   &::before {
     content: '';
     position: absolute;
-    width: 200px;
-    height: 20px;
-    background: #5f5f5f;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 20px -5px rgba(0,0,0,.5);
     bottom: 0;
-    left: 10px;
+    left: 0;
     z-index: -1;
   }
 }
@@ -91,23 +94,13 @@ h1 {
 @media(min-width: 480px) {
   h1 {
     font-size: 60px;
-
-    &::before {
-      width: 275px;
-      height: 35px;
-    }
   }
 }
 
 @media(min-width: 768px) {
   h1 {
     font-size: 80px;
-
-    &::before {
-      width: 325px;
-      height: 40px;
-      left: 0;
-    }
+    padding: 2rem 3rem;
   }
 }
 
