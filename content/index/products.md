@@ -2,7 +2,7 @@
 menu-order: 2
 title: Products
 banner:
-  image: https://argusjournal.com/wp-content/uploads/2021/07/tokyo-covid-stste-of-emergency.jpg
+  image: https://res.cloudinary.com/crux-wheels/image/upload/v1628432682/banners/banner_k1qc1o.jpg
   banner_text: My Products
 product_feature:
   left_product:
