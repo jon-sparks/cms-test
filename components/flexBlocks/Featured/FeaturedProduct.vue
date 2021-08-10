@@ -1,5 +1,5 @@
 <template>
-  <div class="home-product">
+  <div class="home-product animate" ref="animate">
     <client-only>
       <nuxt-link
         :to="`/${wheel.product}`"
@@ -30,7 +30,8 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      this.getProd();
+      this.getProd()
+      this.$animate(this.$refs.animate)
     })
   },
   methods: {
@@ -139,6 +140,17 @@ export default {
     height: 100%;
     object-fit: cover;
     transition: transform ease .3s;
+  }
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(150px);
+  transition: all ease .5s;
+
+  &--in {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

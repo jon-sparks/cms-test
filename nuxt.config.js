@@ -35,7 +35,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     `@/plugins/parseMd`,
-    { src: '@/plugins/vueAwesomeSwiper.js', ssr: false },
+    { src: `@/plugins/animate`, mode: `client` },
+    { src: '@/plugins/vueAwesomeSwiper.js', mode: `client` },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

@@ -1,5 +1,5 @@
 <template>
-  <section class="image-text">
+  <section class="image-text animate" ref="animate">
     <div class="image-text__image">
       <img :src="section.image.image" :alt="section.image.alt">
     </div>
@@ -18,6 +18,9 @@
 <script>
 export default {
   props: [`section`],
+  mounted () {
+    this.$animate(this.$refs.animate)
+  },
   computed: {
     hasButton () {
       return this.section.button.link.length > 0 && this.section.button.text.length > 0;
@@ -54,6 +57,33 @@ export default {
   align-items: flex-start;
   justify-content: center;
   font-size: 18px;
+}
+
+.animate {
+  overflow: hidden;
+
+  .image-text__image {
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: all ease .5s;
+  }
+  .image-text__content {
+    opacity: 0;
+    transform: translateX(150px);
+    transition: all ease .5s;
+  }
+
+  &--in {
+
+    .image-text__image {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .image-text__content {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 @media(min-width: 640px) {

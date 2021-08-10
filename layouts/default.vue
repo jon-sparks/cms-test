@@ -19,18 +19,18 @@ export default {
   },
   data () {
     return {
-      observer: null,
+      resizeObserver: null,
     }
   },
   mounted () {
-    this.observer = new ResizeObserver(entries => {
+    this.resizeObserver = new ResizeObserver(entries => {
       entries.forEach(entry => {
         entry.contentRect.width <= 640
           ? !this.isMobile && this.$store.dispatch(`setIsMobile`, true)
           : this.isMobile && this.$store.dispatch(`setIsMobile`, false)
       })
     })
-    this.observer.observe(this.$refs.main)
+    this.resizeObserver.observe(this.$refs.main)
   },
   computed: {
     siteName () {

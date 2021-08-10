@@ -1,15 +1,18 @@
 <template>
   <section
-    class="content-width"
+    class="text-block content-width"
     :class="{ 'extra-margin' : section.extra_margin }"
   >
-    <div class="rich-text" v-html="md" />
+    <div class="rich-text animate" ref="animate" v-html="md" />
   </section>
 </template>
 
 <script>
 export default {
   props: [`section`],
+  mounted () {
+    this.$animate(this.$refs.animate)
+  },
   computed: {
     md () {
       return this.$parseMd(this.section.text)
@@ -19,6 +22,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.animate {
+  opacity: 0;
+  transform: translateY(150px);
+  transition: all ease .6s;
+
+  &--in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .rich-text {
   position: relative;
 
