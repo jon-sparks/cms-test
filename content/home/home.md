@@ -104,6 +104,7 @@ sections:
     extra_margin: true
     image: https://res.cloudinary.com/crux-wheels/image/upload/v1625221952/samples/cloudinary-group.jpg
     alt: an image
+    full_width: true
   - type: image
     extra_margin: true
     image: https://res.cloudinary.com/crux-wheels/image/upload/v1628432682/banners/banner_k1qc1o.jpg
