@@ -52,8 +52,8 @@ export default {
     src () {
       if (this.product) {
         return this.$cloudinary.image.url(`/${this.getId(this.product['featured-image'])}`, {
-          width: 800,
-          height: 800,
+          width: 318,
+          height: 318,
           crop: 'scale'
         })
       }

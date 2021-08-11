@@ -10,7 +10,7 @@ export default (context, inject) => {
           entry.target.classList.remove(`animate--in`)
         }
       })
-    }, {rootMargin: "0px 0px -200px 0px"})
+    }, {rootMargin: "0px 0px -100px 0px"})
     obs.observe(element)
   }
   

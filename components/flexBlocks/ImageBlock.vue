@@ -1,5 +1,9 @@
 <template>
-  <section class="full-width-image">
+  <section
+    class="full-width-image animate"
+    :class="{ 'content-width' : !section.full_width }"
+    ref="image"
+  >
     <img
       :src="src"
       :alt="section.alt"
@@ -17,25 +21,44 @@ export default {
         width: 1920,
       })
     }
+  },
+  mounted () {
+    this.$animate(this.$refs.image)
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .full-width-image {
+  position: relative;
   padding: 2rem 0;
 }
+
 .full-width-image img {
+  display: block;
   width: 100%;
-  height: 50vw;
-  max-height: 700px;
   object-fit: cover;
   object-position: center;
 }
 
-@media(min-width: 480px) {
-  .full-width-image img {
-    height: 38vw;
+.animate {
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 4rem);
+    background: var(--primary);
+    transition: all ease-in .6s .3s;
+  }
+
+  &--in {
+    
+    &::after {
+      width: 0;
+    }
   }
 }
 </style>

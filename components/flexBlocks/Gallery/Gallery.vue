@@ -1,7 +1,8 @@
 <template>
   <section
-    class="gallery"
+    class="gallery animate"
     :class="{ 'extra-margin' : section.extra_margin }"
+    ref="gallery"
   >
     <h2 class="underlined-title">Gallery</h2>
     <div class="gallery-wrapper">
@@ -13,6 +14,7 @@
       >
         <GalleryThumbnail
           :image="image"
+          class="gallery__thumbnail"
           @click.native="setGalleryStatus(image)"
         />
       </AspectRatio>
@@ -34,6 +36,9 @@ export default {
       selectedImage: null,
       galleryOpen: false,
     }
+  },
+  mounted () {
+    this.$animate(this.$refs.gallery)
   },
   methods: {
     setGalleryStatus (image) {
@@ -85,6 +90,26 @@ export default {
 
   &__image {
     width: 20%;
+  }
+}
+
+.animate {
+
+  .gallery__image {
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all ease .6s;
+  }
+
+  &--in {
+
+    @for $i from 1 through 10 {
+      .gallery__image:nth-child(#{$i}) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: $i/8 +s;
+      }
+    }
   }
 }
 
