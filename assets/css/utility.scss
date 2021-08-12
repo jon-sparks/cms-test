@@ -2,8 +2,11 @@
   --primary: #fcb929;
   --secondary: #575757;
   --tertiary: #7e7e7e;
-  --accent: #f7f7f7;
+  --accent: #565656;
   --white: #FFFFFF;
+  --dark: #181818;
+  --light: #ebebeb;
+  --grey: #474747;
 }
 
 @font-face {
@@ -37,7 +40,7 @@ html {
 .underlined-title {
   position: relative;
   font-size: 70px;
-  color: black;
+  color: var(--primary);
 
   &::after {
     content: '';
@@ -47,7 +50,7 @@ html {
     width: 70%;
     height: 25px;
     z-index: -1;
-    background: var(--primary);
+    background: var(--grey);
   }
 }
 

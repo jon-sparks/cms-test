@@ -48,12 +48,11 @@ export default {
 
 <style>
 body {
-  /* background: var(--accent);
-  background: rgb(245,245,245);
-  background: linear-gradient(52deg, rgba(245,245,245,1) 0%, rgba(249,239,255,1) 100%); */
+  background: var(--dark);
 }
 html {
   font-family: 'Titillium Web', sans-serif;
+  color: var(--light);
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

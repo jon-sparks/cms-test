@@ -6,17 +6,19 @@
       :to="item.path"
       class="index-item"
     >
-      <div class="index-item__image">
-        <img :src="item['featured-image']" alt="">
-        <h3>{{ item.title }}</h3>
-      </div>
-      <!-- <div class="index-item__content">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-        <button>
-          VIEW
-        </button>
-      </div> -->
+      <AspectRatio data-aspect="1:1">
+        <div class="index-item__image">
+          <img :src="item['featured-image']" alt="">
+          <h3>{{ item.title }}</h3>
+        </div>
+        <!-- <div class="index-item__content">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+          <button>
+            VIEW
+          </button>
+        </div> -->
+      </AspectRatio>
     </nuxt-link>
   </section>
 </template>
@@ -31,8 +33,8 @@ export default {
 .index-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 3rem;
-  row-gap: 3rem;
+  column-gap: 6rem;
+  row-gap: 6rem;
 }
 
 .index-item {
@@ -44,7 +46,7 @@ export default {
 }
 
 .index-item h3 {
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .index-item__image {
@@ -52,25 +54,26 @@ export default {
   position: relative;
   background: #eb9e00;
   border-radius: 25px;
-  width: 369px;
-  height: 369px;
+  width: 100%;
+  height: 100%;
 }
 
 .index-item__image img {
   position: absolute;
   top: -50px;
   right: -40px;
+  width: 100%;
   z-index: 1;
 }
 
 .index-item__image h3 {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 29px;
   color: #252525;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 72px;
+  font-size: 50px;
 }
 
 .index-item__content {

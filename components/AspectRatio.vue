@@ -20,7 +20,7 @@ export default {
 	display: block;
 	max-width: 100%;
 	position: relative;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 [data-aspect]:before {
