@@ -29,10 +29,10 @@ export default {
 <style lang="scss" scoped>
 .index-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 6rem;
-  row-gap: 6rem;
-  margin-top: 10rem;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 2rem;
+  margin-top: 5rem;
 }
 
 .index-item {
@@ -56,9 +56,9 @@ export default {
 
     img {
       position: absolute;
-      top: -50px;
-      right: -40px;
-      width: 100%;
+      top: -25px;
+      right: -10px;
+      width: 90%;
       z-index: 1;
     }
 
@@ -69,7 +69,7 @@ export default {
       color: #252525;
       text-transform: uppercase;
       font-weight: bold;
-      font-size: 50px;
+      font-size: 22px;
     }
   }
 
@@ -86,6 +86,31 @@ export default {
       background: var(--tertiary);
       color: var(--white);
       pointer-events: none;
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  .index-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 6rem;
+    row-gap: 6rem;
+    margin-top: 10rem;
+  }
+
+  .index-item {
+
+    &__image {
+
+      img {
+        top: -50px;
+        right: -40px;
+        width: 100%;
+      }
+
+      h3 {
+        font-size: 50px;
+      }
     }
   }
 }
