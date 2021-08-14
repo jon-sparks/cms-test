@@ -35,16 +35,10 @@ sections:
   - type: featured_products
     extra_margin: true
     products:
-      - product: products/sol
       - product: products/sol-5
-      - product: products/dorado
       - product: products/dorado-5
-      - product: products/chicken-burger
       - product: products/orion-5
-      - product: products/beef-burger
       - product: products/imai
-      - product: products/cygnus-a
-      - product: products/cygnus-b
   - type: text_block
     extra_margin: true
     text: >-
