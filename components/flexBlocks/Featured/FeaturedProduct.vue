@@ -1,18 +1,22 @@
 <template>
-  <div class="home-product animate" ref="animate">
-    <client-only>
-      <nuxt-link
-        :to="`/${wheel.product}`"
+  <nuxt-link
+    :to="`/${wheel.product}`"
+    class="index-item"
+  >
+    <AspectRatio ratio="1:1">
+      <div
+        class="index-item__image animate"
+        ref="animate"
       >
-        <img :src="src" :alt="name" loading="lazy">
-        <div class="product-overlay">
-          <div>
-            <h3>{{ name }}</h3>
-          </div>
-        </div>
-      </nuxt-link>
-    </client-only>
-  </div>
+        <Img
+          :source="featuredImage"
+          :alt="`alt`"
+          :width="330"
+        />
+        <h3>{{ name }}</h3>
+      </div>
+    </AspectRatio>
+  </nuxt-link>
 </template>
 
 <script>
@@ -20,12 +24,13 @@ export default {
   props: ['wheel'],
   data () {
     return {
-      // src: this.$cloudinary.image.url(`/${this.getId(this.product['featured-image'])}`, {
-      //   width: 800,
-      //   height: 800,
-      //   crop: 'scale'
-      // }),
       product: null,
+      featuredImage : ``,
+    }
+  },
+  watch: {
+    product () {
+      this.featuredImage = this.product[`featured-image`];
     }
   },
   mounted () {
