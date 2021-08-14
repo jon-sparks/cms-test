@@ -54,6 +54,19 @@ export default {
     width: 100%;
     height: 100%;
 
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      border: solid white 0px;
+      border-radius: 25px;
+      opacity: 1;
+      transition: all ease .3s;
+    }
+
     img {
       position: absolute;
       top: -25px;
@@ -70,6 +83,14 @@ export default {
       text-transform: uppercase;
       font-weight: bold;
       font-size: 22px;
+    }
+
+    &:hover,
+    &:focus-visible {
+
+      &::before {
+        animation: pulse 1s infinite .5s;
+      }
     }
   }
 
@@ -112,6 +133,19 @@ export default {
         font-size: 50px;
       }
     }
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    border: solid white 0;
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.1);
+    border: solid white 5px;
+    opacity: 0;
   }
 }
 </style>
