@@ -49,10 +49,11 @@ export default {
   &__image {
     padding: 2rem;
     position: relative;
-    background: #eb9e00;
+    background: var(--orange);
     border-radius: 25px;
     width: 100%;
     height: 100%;
+    transition: all ease .2s;
 
     &::before {
       position: absolute;
@@ -73,6 +74,7 @@ export default {
       right: -10px;
       width: 90%;
       z-index: 1;
+      transition: all ease .3s;
     }
 
     h3 {
@@ -87,9 +89,14 @@ export default {
 
     &:hover,
     &:focus-visible {
+      background: var(--lightOrange);
 
       &::before {
-        animation: pulse 1s infinite .5s;
+        animation: pulse 1.5s infinite;
+      }
+
+      img {
+        transform: translateY(-20px);
       }
     }
   }
@@ -137,12 +144,17 @@ export default {
 }
 
 @keyframes pulse {
-  from {
+  0% {
     transform: scale(1);
     border: solid white 0;
     opacity: 1;
   }
-  to {
+  80% {
+    transform: scale(1.1);
+    border: solid white 5px;
+    opacity: 0;
+  }
+  100% {
     transform: scale(1.1);
     border: solid white 5px;
     opacity: 0;
