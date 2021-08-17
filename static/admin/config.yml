@@ -164,6 +164,13 @@ collections:
           widget: object
           fields:
           - { label: Extra Margin, name: extra_margin, widget: boolean, required: false }
+          - label: 'Button'
+            name: 'button'
+            widget: object
+            fields:
+            - { label: Text, name: text, widget: string }
+            - { label: External Link, name: external_link, widget: boolean, required: false }
+            - { label: Link, name: link, widget: string }
           - label: 'Products'
             name: 'products'
             widget: list

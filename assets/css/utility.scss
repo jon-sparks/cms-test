@@ -145,9 +145,43 @@ html {
     &__image {
 
       img {
+        top: -35px;
+        right: -10px;
+        width: 100%;
+      }
+
+      h3 {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+@media(min-width: 1024px) {
+  .index-item {
+
+    &__image {
+
+      img {
+        top: -50px;
+        right: -10px;
+      }
+
+      h3 {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+@media(min-width: 1750px) {
+  .index-item {
+
+    &__image {
+
+      img {
         top: -50px;
         right: -40px;
-        width: 100%;
       }
 
       h3 {

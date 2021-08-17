@@ -75,17 +75,6 @@ export default {
   width: 100%;
   max-width: 350px;
 
-  // &::after {
-  //   content: '';
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 0;
-  //   height: 100%;
-  //   width: 50%;
-  //   background: grey;
-  //   z-index: 0;
-  // }
-
   & > a {
     position: relative;
     display: block;
@@ -98,43 +87,6 @@ export default {
 
       img {
         transform: scale(1.05);
-      }
-
-      .product-overlay {
-        opacity: 1;
-      }
-    }
-
-    .product-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 1;
-      transition: opacity ease .3s;
-
-      & > div {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-        height: 80%;
-        border: solid 1px var(--primary);
-
-        h3 {
-          position: absolute;
-          bottom: 2rem;
-          left: 2rem;
-          font-size: 38px;
-          margin: 0;
-          line-height: 1;
-        }
       }
     }
   }
@@ -159,17 +111,8 @@ export default {
   }
 }
 
-@media(min-width: 480px) {
+@media(min-width: 768px) {
   .home-product {
-
-    a .product-overlay {
-      opacity: 0;
-      background: rgba(0,0,0,.8);
-
-      & > div h3 {
-        font-size: 45px;
-      }
-    }
   }
 }
 </style>

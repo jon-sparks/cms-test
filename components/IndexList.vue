@@ -29,9 +29,21 @@ export default {
 @media(min-width: 768px) {
   .index-list {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 6rem;
+    column-gap: 2rem;
     row-gap: 6rem;
-    margin-top: 10rem;
+    margin-top: 5rem;
+  }
+}
+
+@media(min-width: 1024px) {
+  .index-list {
+    column-gap: 3rem;
+  }
+}
+
+@media(min-width: 1750px) {
+  .index-list {
+    column-gap: 6rem;
   }
 }
 </style>

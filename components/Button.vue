@@ -1,13 +1,13 @@
 <template>
   <button
     v-if="submit"
-    class="button"
+    :class="[`button`, inverted && `button--inverted`]"
   >
     <slot />
   </button>
   <a
     v-else-if="!submit && button.external_link"
-    class="button"
+    :class="[`button`, inverted && `button--inverted`]"
     :href="button.link"
     target="_blank"
   >
@@ -15,7 +15,7 @@
   </a>
   <nuxt-link
     v-else-if="!submit"
-    class="button"
+    :class="[`button`, inverted && `button--inverted`]"
     :to="button.link"
   >
     <slot />
@@ -31,6 +31,9 @@ export default {
     submit: {
       default: false
     },
+    inverted: {
+      default: false,
+    }
   }
 }
 </script>
@@ -40,7 +43,7 @@ export default {
   padding: .5rem 2rem;
   background: var(--primary);
   border: solid 2px var(--primary);
-  color: white;
+  color: var(--dark);
   text-decoration: none;
   margin-top: 2rem;
   transition: all ease .2s;
@@ -49,6 +52,17 @@ export default {
   &:focus {
     background: none;
     color: var(--primary);
+  }
+
+  &--inverted {
+    background: rgba(0,0,0,0);
+    color: var(--primary);
+
+    &:hover,
+    &:focus {
+      background: var(--primary);
+      color: var(--dark);
+    }
   }
 }
 </style>
