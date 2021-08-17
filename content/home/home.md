@@ -39,6 +39,9 @@ sections:
       - product: products/dorado-5
       - product: products/orion-5
       - product: products/imai
+    button:
+      text: View All
+      link: /products
   - type: text_block
     extra_margin: true
     text: >-
