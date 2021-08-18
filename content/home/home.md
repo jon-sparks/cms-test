@@ -106,5 +106,10 @@ sections:
     extra_margin: true
     image: https://res.cloudinary.com/crux-wheels/image/upload/v1628432682/banners/banner_k1qc1o.jpg
     alt: a description
+  - type: contact_form
+    form_title: Contact Us
+    form_name: home
+    button:
+      text: send
 ---
 Hello
