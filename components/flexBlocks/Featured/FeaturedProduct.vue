@@ -13,7 +13,7 @@
           :alt="`alt`"
           :width="330"
         />
-        <h3>{{ name }}</h3>
+        <!-- <h3>{{ name }}</h3> -->
       </div>
     </AspectRatio>
   </nuxt-link>

@@ -11,6 +11,7 @@
             :alt="`alt`"
             :width="330"
           />
+          <!-- <h3>{{ item.title }}</h3> -->
         </div>
       </AspectRatio>
     </client-only>
