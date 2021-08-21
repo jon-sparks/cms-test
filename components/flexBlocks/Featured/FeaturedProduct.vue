@@ -1,22 +1,24 @@
 <template>
-  <nuxt-link
-    :to="`/${wheel.product}`"
-    class="index-item"
-  >
-    <AspectRatio ratio="1:1">
-      <div
-        class="index-item__image animate"
-        ref="animate"
-      >
-        <Img
-          :source="featuredImage"
-          :alt="`alt`"
-          :width="330"
-        />
-        <!-- <h3>{{ name }}</h3> -->
-      </div>
-    </AspectRatio>
-  </nuxt-link>
+  <client-only>
+    <nuxt-link
+      :to="`/${wheel.product}`"
+      class="index-item"
+    >
+      <AspectRatio ratio="1:1">
+        <div
+          class="index-item__image animate"
+          ref="animate"
+        >
+          <Img
+            :source="featuredImage"
+            :alt="`alt`"
+            :width="330"
+          />
+          <!-- <h3>{{ name }}</h3> -->
+        </div>
+      </AspectRatio>
+    </nuxt-link>
+  </client-only>
 </template>
 
 <script>
