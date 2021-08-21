@@ -1,9 +1,9 @@
 <template>
   <section class="contact-form">
     <div class="content-width">
-      <h2 class="contact-form__title">{{ section.form_title }}</h2>
+      <!-- <h2 class="contact-form__title">{{ section.form_title }}</h2> -->
       <form :name="section.form_name" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input class="input-small" type="text" name="name" placeholder="name">
+        <!-- <input class="input-small" type="text" name="name" placeholder="name"> -->
         <!-- <input class="input-small" type="email" name="email" placeholder="email">
         <textarea class="input-large" name="message" placeholder="message"></textarea> -->
         <Button
