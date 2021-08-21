@@ -5,6 +5,7 @@
       <form :name="section.form_name" data-netlify="true">
         <!-- <input class="input-small" type="text" name="name" placeholder="name"> -->
         <!-- <input class="input-small" type="email" name="email" placeholder="email"> -->
+        <input type="hidden" name="form-name" :value="section.form_name">
         <textarea class="input-large" name="message" placeholder="message"></textarea>
         <Button
           submit="true"
