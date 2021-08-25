@@ -96,7 +96,7 @@ export default {
 
 <style  lang="scss" scoped>
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -104,18 +104,39 @@ header {
   font-weight: bold;
   z-index: 999;
   transition: background ease .3s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7511379551820728) 100%);
+    pointer-events: none;
+    transition: opacity ease .3s;
+  }
 }
 
-/* header.scrolled {
-  background: var(--secondary);
-} */
+header.scrolled {
+  background: var(--dark);
+  border-bottom: solid 2px var(--primary);
+
+  &::before {
+    opacity: 0;
+  }
+
+  nav a {
+    color: var(--primary)
+  }
+}
 
 .nav-container {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: .5rem 1rem;
 }
 
 .logo-link {
@@ -131,9 +152,9 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: var(--primary);
   font-size: 20px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   padding: .5rem;
   margin: 0 1rem;
   text-decoration: none;
@@ -147,9 +168,9 @@ nav a {
   height: 100%;
   flex-direction: column;
   align-items: flex-start;
-  background: rgba(255,255,255,.7);
+  background: rgba(0,0,0,.7);
   backdrop-filter: blur(7px);
-  border-right: solid rgb(245, 252, 255) 1px;
+  border-right: solid var(--dark) 1px;
   box-shadow: 3px 0 10px 0 rgba(0,0,0,.2);
   padding: 2rem 0;
 
@@ -168,7 +189,7 @@ nav a {
     left: 0;
     width: 100%;
     height: 200px;
-    background: linear-gradient(180deg, white, rgba(255,255,255,0));
+    background: linear-gradient(180deg, black, rgba(255,255,255,0));
     z-index: 0;
   }
 
@@ -220,7 +241,7 @@ nav a {
     position: absolute;
     width: 100%;
     height: 4px;
-    background: white;
+    background: var(--primary);
   }
 
   &::before,
@@ -229,7 +250,7 @@ nav a {
     content: '';
     width: 36px;
     height: 4px;
-    background: white;
+    background: var(--primary);
     transition: all ease .2s;
   }
 
