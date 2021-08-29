@@ -1,5 +1,5 @@
 ---
-site_name: Template Site
+site_name: Crux Wheels
 logo: https://res.cloudinary.com/doqfxofg6/image/upload/v1620676628/CRUX_LOGO_WHITE_RGB-01_lpkoqv.png
 social:
   - social_media:
@@ -10,5 +10,8 @@ social:
       link: /
   - social_media:
       title: linkedin
+      link: /
+  - social_media:
+      title: instagram
       link: /
 ---
