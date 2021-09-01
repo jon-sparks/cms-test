@@ -9,9 +9,6 @@ social:
       title: twitter
       link: /
   - social_media:
-      title: linkedin
-      link: /
-  - social_media:
       title: instagram
       link: /
 ---
