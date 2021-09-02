@@ -8,6 +8,7 @@
       <Button
         v-if="hasButton"
         :button="section.button"
+        :inverted="true"
       >
         {{ section.button.text }}
       </Button>

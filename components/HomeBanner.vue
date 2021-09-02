@@ -64,6 +64,7 @@ export default {
 
   &__button {
     font-size: 22px;
+    border-radius: 10px;
     padding: .5rem 2rem;
     background: none;
     color: var(--primary);

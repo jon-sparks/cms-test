@@ -85,10 +85,22 @@ export default {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 2rem 0;
+    padding: 2rem 0 0 0;
   }
 
   &__image {
+    width: 50%;
+  }
+}
+
+@media(min-width: 640px) {
+  .gallery__image {
+    width: 33.3%;
+  }
+}
+
+@media(min-width: 1024px) {
+  .gallery__image {
     width: 20%;
   }
 }

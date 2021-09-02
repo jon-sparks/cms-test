@@ -37,6 +37,7 @@ export default {
 .full-width-image img {
   display: block;
   width: 100%;
+  max-height: 700px;
   object-fit: cover;
   object-position: center;
 }

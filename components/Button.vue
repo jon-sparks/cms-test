@@ -43,6 +43,8 @@ export default {
   padding: .5rem 2rem;
   background: var(--primary);
   border: solid 2px var(--primary);
+  border-radius: 10px;
+  line-height: 1.5;
   color: var(--dark);
   text-decoration: none;
   margin-top: 2rem;

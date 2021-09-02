@@ -1,14 +1,15 @@
 <template>
   <section class="contact-form">
     <div class="content-width">
-      <h2 class="contact-form__title">{{ section.form_title }}</h2>
+      <h2 class="underlined-title">{{ section.form_title }}</h2>
       <form :name="section.form_name" data-netlify="true">
         <input type="hidden" name="form-name" :value="section.form_name">
         <input class="input-small" type="text" name="name" placeholder="name">
         <input class="input-small" type="email" name="email" placeholder="email">
         <textarea class="input-large" name="message" placeholder="message"></textarea>
         <Button
-          submit="true"
+          :submit="true"
+          :inverted="true"
         >
           {{ section.button.text }}
         </Button>
@@ -27,7 +28,12 @@ export default {
 .contact-form {
   padding: 5rem 0;
   margin: 4rem 0;
-  background: var(--secondary);
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &__title {
     color: white;
@@ -40,6 +46,7 @@ export default {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
 
     input,
     textarea {
@@ -47,18 +54,20 @@ export default {
       max-height: 300px;
       background: none;
       border: none;
-      border-bottom: solid 2px white;
+      border-bottom: solid 2px var(--primary);
       color: white;
       font-family: 'Titillium Web', sans-serif;
       font-size: 1.1rem;
 
       &::placeholder {
-        color: rgb(230, 230, 230);
+        text-transform: capitalize;
+        color: rgba(255,255,255,.5);
       }
     }
 
     button {
-      font-size: 1.1rem;
+      text-transform: capitalize;
+      font-size: 24px;
       cursor: pointer;
     }
 

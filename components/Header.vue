@@ -5,7 +5,9 @@
         to="/"
         class="logo-link"
       >
-        <img src="https://res.cloudinary.com/doqfxofg6/image/upload/v1620676628/CRUX_LOGO_WHITE_RGB-01_lpkoqv.png" alt="">
+        <Logo
+          fill="var(--primary)"
+        />
       </nuxt-link>
       <transition
         name="slide"
@@ -94,7 +96,7 @@ export default {
 }
 </script>
 
-<style  lang="scss" scoped>
+<style lang="scss" scoped>
 header {
   position: fixed;
   top: 0;
@@ -141,9 +143,11 @@ header.scrolled {
 
 .logo-link {
   height: 70px;
-}
-.logo-link img {
-  height: 100%;
+  padding: .75rem 0;
+
+  svg {
+    height: 100%;
+  }
 }
 
 nav {
