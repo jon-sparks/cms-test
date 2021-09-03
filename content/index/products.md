@@ -1,9 +1,9 @@
 ---
 menu-order: 2
-title: Products
+title: Wheels
 banner:
   image: https://res.cloudinary.com/crux-wheels/image/upload/v1628432682/banners/banner_k1qc1o.jpg
-  banner_text: My Products
+  banner_text: Wheel Select
 product_feature:
   left_product:
     model_name: Dorado
