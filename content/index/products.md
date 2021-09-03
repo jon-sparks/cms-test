@@ -1,6 +1,6 @@
 ---
 menu-order: 2
-title: Wheels
+title: Products
 banner:
   image: https://res.cloudinary.com/crux-wheels/image/upload/v1628432682/banners/banner_k1qc1o.jpg
   banner_text: Wheel Select
