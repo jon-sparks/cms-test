@@ -227,7 +227,9 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Short Description', name: 'short_description', widget: 'string' }
+      - { label: 'Wheel Logo', name: 'wheel-logo', widget: 'image', required: false }
       - { label: 'Featured Image', name: 'featured-image', widget: 'image' }
+      - { label: 'Front On Image', name: 'front-on-image', widget: 'image' }
       - label: 'Enable Configurator'
         name: 'enable_configurator'
         widget: boolean
