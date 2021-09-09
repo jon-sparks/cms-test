@@ -1,7 +1,7 @@
 <template>
   <section class="contact-form">
     <div class="content-width">
-      <h2 class="underlined-title">{{ section.form_title }}</h2>
+      <UnderlinedTitle>{{ section.form_title }}</UnderlinedTitle>
       <form :name="section.form_name" data-netlify="true">
         <input type="hidden" name="form-name" :value="section.form_name">
         <input class="input-small" type="text" name="name" placeholder="name">

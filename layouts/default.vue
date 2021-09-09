@@ -4,6 +4,7 @@
       v-if="basketStatus"
     /> -->
     <Header />
+    <Logo class="bg" />
     <Nuxt />
     <Footer />
   </div>
@@ -46,9 +47,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 body {
   background: var(--dark);
+  overflow-x: hidden;
 }
 html {
   font-family: 'Titillium Web', sans-serif;
@@ -60,6 +62,16 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+.bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  fill: #151515;
+  z-index: -1;
 }
 
 h1, h2, h3, h4, h5, h6 {

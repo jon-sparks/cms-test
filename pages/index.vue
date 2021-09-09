@@ -1,24 +1,10 @@
-// insta api token: IGQVJWUWVDRWxrMHZAtcEU3ZA1VUMmhWMFdLSUJXTzFhektBS2t2N3J5aVlHSS1CbXNuM3IxMnF0bnBkbk5LNklTb250MXpqSmRmVWwwbkhKTW1JdHIyS0d5OVBQc2Y1WUdHUlNVQ2FyakxnUklNbnktUAZDZD
 <template>
   <div class="container main">
-    
     <HomeBanner />
-
-    <!-- <section class="home-feature main-width">
-      <h2>Discover</h2>
-      <div class="home-feature__container">
-        <Featured
-          v-for="(wheel, index) in page[0].features_wheels"
-          :key="index"
-          :wheel="wheel"
-        />
-      </div>
-    </section> -->
-
     <Flexible
       :sections="home.sections"
     />
-
+    <Splash />
   </div>
 </template>
 

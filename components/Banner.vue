@@ -1,13 +1,13 @@
 <template>
   <section class="banner">
-    <transition name="banner" appear>
+    <!-- <transition name="banner" appear> -->
       <div class="banner__image">
         <img :src="src" alt="">
-        <transition name="banner-title" appear>
+        <!-- <transition name="banner-title" appear> -->
           <h1>{{ text }}</h1>
-        </transition>
+        <!-- </transition> -->
       </div>
-    </transition>
+    <!-- </transition> -->
   </section>
 </template>
 

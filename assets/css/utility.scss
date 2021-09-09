@@ -39,23 +39,6 @@ html {
   padding: 0 1rem;
 }
 
-.underlined-title {
-  position: relative;
-  font-size: 70px;
-  color: var(--primary);
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 21px;
-    left: -5%;
-    width: 70%;
-    height: 25px;
-    z-index: -1;
-    background: var(--grey);
-  }
-}
-
 .social-icon {
   width: 25px;
   height: 25px;
@@ -218,9 +201,39 @@ html {
 
 .pagefade-enter-active,
 .pagefade-leave-active {
-  transition: all ease .3s;
+  transition: all ease .25s;
 }
-.pagefade-enter,
-.pagefade-leave-active {
-  opacity: 0;
+
+.pagefade-enter-active {
+
+  .splash {
+    animation: swipeout .25s;
+    animation-timing-function: linear;
+  }
+}
+
+.pagefade-leave-to {
+
+  .splash {
+    animation: swipein .25s forwards;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes swipein {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes swipeout {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
 }

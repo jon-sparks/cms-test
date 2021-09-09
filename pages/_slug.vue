@@ -7,6 +7,7 @@
     <Flexible
       :sections="page.sections"
     />
+    <Splash />
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     class="home-feature main-width"
     :class="{ 'extra-margin' : section.extra_margin }"
   >
-    <h2 class="underlined-title">Discover</h2>
+    <UnderlinedTitle>Discover</UnderlinedTitle>
     <div class="index-list">
       <FeaturedProduct
         v-for="(wheel, index) in section.products"

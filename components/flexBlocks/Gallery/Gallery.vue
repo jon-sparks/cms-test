@@ -4,7 +4,7 @@
     :class="{ 'extra-margin' : section.extra_margin }"
     ref="gallery"
   >
-    <h2 class="underlined-title">Gallery</h2>
+    <UnderlinedTitle>Gallery</UnderlinedTitle>
     <div class="gallery-wrapper">
       <AspectRatio
         v-for="(image, id) in images"

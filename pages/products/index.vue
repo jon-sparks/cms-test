@@ -48,7 +48,7 @@
         :items="indexData"
       />
     </section>
-
+    <Splash />
   </section>
 </template>
 

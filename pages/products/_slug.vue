@@ -12,24 +12,14 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque amet placeat sapiente, consectetur tempora eius rerum libero sed nesciunt nulla tempore nihil, nobis optio blanditiis. Quasi illo similique maiores laboriosam?</p>
         </div>
       </div>
-      <!-- <h2>{{ post.title }}</h2> -->
-
-      <!-- <Configurator
-        v-if="post.enable_configurator"
-        :sections="post.configurator_options"
-      /> -->
-
-      <!-- <button @click="addToBasket">Add to basket</button>
-      <nuxt-content :document="post" /> -->
     </div>
+    <Splash />
   </section>
 </template>
 
 <script>
-import Configurator from '../../components/Configurator.vue';
 export default {
   transition: `pagefade`,
-  components: { Configurator },
   async asyncData({ $content, params, error }) {
     let post;
     try {
