@@ -10,9 +10,16 @@
           :alt="`alt`"
           :width="330"
         />
-        <h3>{{ item.title }}</h3>
+        <h3 v-if="!item['wheel-logo']">{{ item.title }}</h3>
       </div>
     </AspectRatio>
+    <Img
+      v-if="item['wheel-logo']"
+      :src="item['wheel-logo']"
+      :alt="`wheel logo`"
+      :width="200"
+      class="wheel-logo"
+    />
   </nuxt-link>
 </template>
 

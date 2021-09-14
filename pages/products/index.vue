@@ -79,6 +79,9 @@ export default {
   computed: {
     page () {
       return this.productIndex[0]
+    },
+    items () {
+      return this.indexData.sort((a, b) => a.title.localeCompare(b.title))
     }
   }
 }
