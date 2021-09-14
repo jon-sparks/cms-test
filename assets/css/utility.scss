@@ -60,7 +60,9 @@ html {
     position: absolute;
     bottom: 30px;
     left: 30px;
-    width: 190px;
+    max-height: 50px;
+    max-width: 180px;
+    width: auto;
   }
 
   &__image {
