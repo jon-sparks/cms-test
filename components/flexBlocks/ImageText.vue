@@ -4,7 +4,9 @@
       <img :src="section.image.image" :alt="section.image.alt">
     </div>
     <div class="image-text__content">
-      <div v-html="section.text" />
+      <div>
+        <p>{{ section.text }}</p>
+      </div>
       <Button
         v-if="hasButton"
         :button="section.button"

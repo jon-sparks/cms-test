@@ -102,7 +102,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: bold;
   z-index: 999;
   transition: background ease .3s;
@@ -157,6 +157,7 @@ nav {
 
 nav a {
   color: var(--primary);
+  font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
   padding: .5rem;

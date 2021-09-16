@@ -53,10 +53,10 @@ body {
   overflow-x: hidden;
 }
 html {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
   color: var(--light);
   font-size: 16px;
-  word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -75,7 +75,8 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
   margin-top: 1.5rem;
   margin-bottom: .5rem;
   color: var(--primary);

@@ -56,7 +56,7 @@ export default {
       border: none;
       border-bottom: solid 2px var(--primary);
       color: white;
-      font-family: 'Titillium Web', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-size: 1.1rem;
 
       &::placeholder {

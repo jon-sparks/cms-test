@@ -44,7 +44,7 @@ export default {
   /deep/a {
     position: relative;
     color: var(--primary);
-    font-weight: bold;
+    font-weight: 500;
     text-decoration: none;
 
     &::after {

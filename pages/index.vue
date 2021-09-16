@@ -28,7 +28,7 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Rubik', sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

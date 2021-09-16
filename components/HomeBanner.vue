@@ -10,8 +10,13 @@
       <div class="banner__content main-width">
         <!-- <transition name="banner-title" appear> -->
         <div>
-          <h1>Crux</h1>
-          <h2>Three piece wheels</h2>
+          <div
+            v-html="require(`~/assets/images/svg/logo-subtitle.svg?raw`)"
+            alt="Crux three piece wheels"
+            class="banner__content-logo"
+          />
+          <!-- <h1>Crux</h1>
+          <h2>Three piece wheels</h2> -->
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus cupiditate maiores repudiandae saepe facere a explicabo quidem doloremque.</p>
           <nuxt-link
             class="banner__button"
@@ -110,6 +115,14 @@ export default {
     width: 100%;
     height: 100%;
     z-index: 0;
+
+    &-logo {
+      max-width: 400px;
+
+      /deep/svg {
+        fill: var(--primary);
+      }
+    }
 
     h1, h2 {
       margin: 0;
