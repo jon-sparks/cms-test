@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  props: [`fill`]
+  props: [`fill`],
 }
 </script>

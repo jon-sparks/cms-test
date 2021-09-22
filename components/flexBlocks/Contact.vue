@@ -56,7 +56,7 @@ export default {
       border: none;
       border-bottom: solid 2px var(--primary);
       color: white;
-      font-family: 'Rubik', sans-serif;
+      font-family: var(--body-font);
       font-size: 1.1rem;
 
       &::placeholder {

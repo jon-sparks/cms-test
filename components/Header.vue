@@ -102,8 +102,6 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  font-family: 'Rubik', sans-serif;
-  font-weight: bold;
   z-index: 999;
   transition: background ease .3s;
 
@@ -157,6 +155,7 @@ nav {
 
 nav a {
   color: var(--primary);
+  font-family: var(--heading-font);
   font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;

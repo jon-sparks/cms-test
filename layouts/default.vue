@@ -4,7 +4,10 @@
       v-if="basketStatus"
     /> -->
     <Header />
-    <Logo class="bg" />
+    <Logo
+      v-if="!isProdPage"
+      class="bg"
+    />
     <Nuxt />
     <Footer />
   </div>
@@ -42,6 +45,9 @@ export default {
     },
     isMobile () {
       return this.$store.state.isMobile
+    },
+    isProdPage () {
+      return this.$route.name === `products-slug`
     }
   }
 }
@@ -53,10 +59,10 @@ body {
   overflow-x: hidden;
 }
 html {
-  font-family: 'Rubik', sans-serif;
+  font-family: var(--body-font);
   font-weight: 400;
-  color: var(--light);
   font-size: 16px;
+  color: var(--light);
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -70,12 +76,12 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30vw;
-  fill: #151515;
+  fill: #1a1a1a;
   z-index: -1;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Rubik', sans-serif;
+  font-family: var(--heading-font);
   font-weight: 500;
   margin-top: 1.5rem;
   margin-bottom: .5rem;

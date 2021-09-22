@@ -22,7 +22,7 @@ h2 {
   &::after {
     content: '';
     position: absolute;
-    bottom: 21px;
+    bottom: 10px;
     left: -5%;
     width: 70%;
     height: 25px;

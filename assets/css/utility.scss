@@ -9,16 +9,15 @@
   --grey: #474747;
   --orange: #eb9e00;
   --lightOrange: #ffba2f;
+
+  --heading-font: 'Avant', sans-serif;
+  --body-font: 'Rubik', sans-serif;
 }
 
 @font-face {
-  font-family: "Sharp";
-  src: local("Sharp"),
-  url(~assets/fonts/SharpGrotesk.otf) format("opentype");
-}
-
-html {
-  font-family: "Sharp";
+  font-family: "Avant";
+  src: local("Avant"),
+  url(~assets/fonts/ITCAvantGardeGothicLTBold.otf) format("opentype");
 }
 
 .main {
@@ -125,7 +124,6 @@ html {
     background: white;
 
     button {
-      font-family: 'Rubik', sans-serif;
       font-size: 22px;
       margin-top: 2rem;
       padding: .25rem 2rem;

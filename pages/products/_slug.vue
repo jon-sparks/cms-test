@@ -1,8 +1,9 @@
 <template>
   <section class="product">
-    <Banner 
-      :image="post['featured-image']"
-      :text="post.title"
+    <ProductBanner
+      :image="post[`front-on-image`]"
+      :logo="post[`wheel-logo`]"
+      :name="slug"
     />
     <div class="main-width">
       <div class="product__container">
