@@ -5,7 +5,7 @@ list:
   - things
 banner:
   image: https://media.timeout.com/images/105768580/image.jpg
-  banner_text: Welcomes
+  banner_text: kWelcomes
 features_wheels:
   - type: wheels
     wheel: /products/dorado
