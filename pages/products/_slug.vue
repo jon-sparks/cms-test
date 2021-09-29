@@ -10,12 +10,13 @@
         <div class="product__details">
           <div class="product__poster"></div>
           <div class="product__config">
-            <form name="wheel enquiry" class="product__config-form" data-netlify="true">
+            <!-- <form name="wheel enquiry" class="product__config-form" data-netlify="true"> -->
+            <form name="wheel enquiry" class="product__config-form" v-on:submit.prevent="sendMail">
               <!-- For netlify functionality -->
               <input type="hidden" name="form-name" value="wheel enquiry">
               <!-- --- -->
               <div class="product__config-block">
-                <label for="diameter">Model</label>
+                <label for="model">Model</label>
                 <select v-model="model" name="model" id="model">
                   <option
                     v-for="model in indexData"
@@ -120,12 +121,6 @@ export default {
       quantity: 1,
     }
   },
-  watch: {
-    post () {
-      console.log(`CHANGED!!!`)
-      this.model = this.post.title
-    }
-  },
   methods: {
     addToBasket () {
       this.$store.dispatch(`addToBasket`, {
@@ -160,6 +155,11 @@ export default {
         // error, display the localized error message to your customer
         // using `result.error.message`.
       });
+    },
+    async sendMail () {
+      const mail = await fetch (`/.netlify/functions/test`, { method: 'post', body: this.body })
+      const res = await mail.json()
+      console.log(res)
     }
   },
   computed: {
@@ -168,6 +168,17 @@ export default {
     },
     total () {
       return (parseInt(this.diameter) + parseInt(this.width) + parseInt(this.offset)) * this.quantity || 0
+    },
+    body () {
+      return `
+      <ul>
+        <li>model: ${this.model}</li>
+        <li>diameter: ${this.diameter}</li>
+        <li>width: ${this.width}</li>
+        <li>offset: ${this.offset}</li>
+        <li>quantity: ${this.quantity}</li>
+      </ul>
+      `
     }
   }
 };
