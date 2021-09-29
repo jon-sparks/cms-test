@@ -45,7 +45,7 @@
     </section> -->
     <section class="main-width">
       <IndexList
-        :items="indexData"
+        :items="items"
       />
     </section>
     <Splash />
@@ -107,7 +107,7 @@ export default {
     transition: all ease .3s;
 
     h2 {
-      font-family: "Sharp";
+      font-family: "Avant";
       text-transform: uppercase;
       font-size: 50px;
       margin-bottom: 2rem;
