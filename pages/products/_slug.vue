@@ -10,9 +10,9 @@
         <div class="product__details">
           <div class="product__poster"></div>
           <div class="product__config">
-            <form :name="`${model.title} form`" class="product__config-form" data-netlify="true">
+            <form name="wheel enquiry" class="product__config-form" data-netlify="true">
               <!-- For netlify functionality -->
-              <input type="hidden" name="form-name" :value="`${model.title} form`">
+              <input type="hidden" name="form-name" value="wheel enquiry">
               <!-- --- -->
               <div class="product__config-block">
                 <label for="diameter">Model</label>
