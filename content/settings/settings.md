@@ -11,4 +11,12 @@ social:
   - social_media:
       title: instagram
       link: /
+wheel_config:
+  diameter:
+    - size: "13"
+      price: "200"
+    - size: "14"
+      price: "250"
+    - size: "15"
+      price: "300"
 ---
