@@ -9,12 +9,12 @@ exports.handler = async function(event, context) {
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     // host: "smtp.ethereal.email",
-    host: "smtp.ionos.co.uk",
+    host: process.env.MAIL_HOST,
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: "jon@jonsparks.co.uk",
-      pass: "3!&k$#FE",
+      user: process.env.MAIL_USER,
+      pass: process.env.MAIL_PASSWORD,
       // user: testAccount.user, // generated ethereal user
       // pass: testAccount.pass, // generated ethereal password
     },
