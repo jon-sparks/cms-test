@@ -8,81 +8,24 @@
     <div class="main-width">
       <div class="product__container">
         <div class="product__details">
-          <div class="product__poster"></div>
+          <!-- <div class="product__poster"></div> -->
           <div class="product__config">
-            <!-- <form name="wheel enquiry" class="product__config-form" data-netlify="true"> -->
-            <form name="wheel enquiry" class="product__config-form" v-on:submit.prevent="sendMail">
-              <!-- For netlify functionality -->
-              <input type="hidden" name="form-name" value="wheel enquiry">
-              <!-- --- -->
-              <div class="product__config-block">
-                <label for="model">Model</label>
-                <select v-model="model" name="model" id="model">
-                  <option
-                    v-for="model in indexData"
-                    :key="model.slug"
-                    :value="model.title"
-                  >
-                    {{ model.title }}
-                  </option>
-                </select>
-              </div>
-              <div class="product__config-block">
-                <label for="diameter">Diameter <span>(inches)</span></label>
-                <select v-model="diameter" name="diameter" id="diameter">
-                  <option value="0">Choose</option>
-                  <option value="100">13</option>
-                  <option value="120">14</option>
-                  <option value="140">15</option>
-                </select>
-              </div>
-              <div class="product__config-block">
-                <label for="width">Width <span>(inches)</span></label>
-                <select v-model="width" name="width" id="width">
-                  <option value="0">Choose</option>
-                  <option value="100">6</option>
-                  <option value="200">7</option>
-                  <option value="300">8</option>
-                  <option value="400">9</option>
-                  <option value="500">10</option>
-                  <option value="600">11</option>
-                </select>
-              </div>
-              <div class="product__config-block">
-                <label for="offset">Offset <span>(mm)</span></label>
-                <select name="offset" id="offset">
-                  <option value="0">Choose</option>
-                  <option value="0">-20</option>
-                  <option value="0">-15</option>
-                  <option value="0">-10</option>
-                  <option value="0">-5</option>
-                  <option value="0">0</option>
-                  <option value="0">5</option>
-                  <option value="0">10</option>
-                  <option value="0">15</option>
-                  <option value="0">20</option>
-                </select>
-              </div>
-              <div class="product__config-block">
-                <label for="quantity">Quantity</label>
-                <select v-model="quantity" name="quantity" id="quantity">
-                  <option value="0">Choose</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-              </div>
-              <div class="product__config-block">
-                <span>Total: £{{ total }}</span>
-              </div>
-              <Button
-                :submit="true"
-                :inverted="true"
-              >
-                Send
-              </Button>
-            </form>
+            <WheelBuilder
+              v-for="(num, index) in counter"
+              :key="`config-${num}`"
+              :closeLast="closeLast"
+              :model="model"
+              :allWheels="indexData"
+              :last="index === counter - 1"
+              :index="index"
+              ref="builder"
+            />
+            <button
+              class="product__add"
+              @click="addSet"
+            >
+              <div class="product__add-plus"></div>
+            </button>
           </div>
         </div>
       </div>
@@ -115,13 +58,16 @@ export default {
   data () {
     return {
       options: null,
-      diameter: 0,
-      width: 0,
-      offset: 0,
-      quantity: 1,
+      counter: 1,
     }
   },
   methods: {
+    addSet () {
+      this.counter++
+    },
+    closeLast () {
+      this.counter--
+    },
     addToBasket () {
       this.$store.dispatch(`addToBasket`, {
         title: this.post.title,
@@ -160,26 +106,28 @@ export default {
       const mail = await fetch (`/.netlify/functions/test`, { method: 'post', body: this.body })
       const res = await mail.json()
       console.log(res)
-    }
+    },
   },
   computed: {
     slug () {
-      return this.post.title.replace(/\s+/g, '-').toLowerCase();
+      return this.post.title.replace(/\s+/g, '-').toLowerCase()
     },
-    total () {
-      return (parseInt(this.diameter) + parseInt(this.width) + parseInt(this.offset)) * this.quantity || 0
-    },
-    body () {
-      return `
-      <ul>
-        <li>model: ${this.model}</li>
-        <li>diameter: ${this.diameter}</li>
-        <li>width: ${this.width}</li>
-        <li>offset: ${this.offset}</li>
-        <li>quantity: ${this.quantity}</li>
-      </ul>
-      `
+    stuff () {
+      const arr = []
+      this.$refs.builder.forEach(build => arr.push(build.config))
+      return arr
     }
+    // body () {
+    //   return `
+    //   <ul>
+    //     <li>model: ${this.model}</li>
+    //     <li>diameter: ${this.diameter}</li>
+    //     <li>width: ${this.width}</li>
+    //     <li>offset: ${this.offset}</li>
+    //     <li>quantity: ${this.quantity}</li>
+    //   </ul>
+    //   `
+    // }
   }
 };
 </script>
@@ -191,43 +139,20 @@ export default {
   }
 
   &__config {
-
-    &-block {
-      display: flex;
-      flex-direction: column;
-      gap: .5rem;
-      align-items: flex-start;
-      margin-bottom: 1rem;
-
-      label {
-        font-family: var(--heading-font);
-        color: var(--primary);
-        font-size: 24px;
-
-        span {
-          font-size: 16px;
-        }
-      }
-
-      & > span {
-        font-family: var(--heading-font);
-        color: var(--primary);
-        font-size: 30px;
-      }
-
-      select {
-        padding: .5rem;
-        font-family: var(--heading-font);
-        font-size: 20px;
-      }
-    }
-  }
-
-  &__details {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 3rem;
   }
+
+  // &__details {
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr;
+  //   gap: 3rem;
+  // }
 
   &__poster {
     width: 100%;
@@ -237,6 +162,46 @@ export default {
 
   &__main-image {
     width: 50%;
+  }
+
+  &__add {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    place-self: stretch;
+    // width: 336px;
+    // height: 467px;
+    border: solid 1px var(--primary);
+    border-radius: 10px;
+    background: none;
+
+    &-plus {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      border: solid 2px var(--primary);
+      border-radius: 50%;
+      background: none;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        width: 2px;
+        height: 50%;
+        border-radius: 1px;
+        background: var(--primary);
+      }
+
+      &::after {
+        transform: rotate(90deg);
+      }
+    }
   }
 }
 </style>
