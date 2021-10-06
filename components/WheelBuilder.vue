@@ -80,7 +80,7 @@
       <button
         v-if="index !== 0 && last"
         class="product__close"
-        @click="closeLast"
+        @click="closeLast(index)"
       />
     </form>
   </div>
@@ -88,14 +88,26 @@
 
 <script>
 export default {
-  props: [`closeLast`, `allWheels`, `model`, `last`, `index`],
+  props: [`updateList`, `closeLast`, `allWheels`, `last`, `index`, `modelIndex`],
   data () {
     return {
+      model: ``,
       diameter: 0,
       width: 0,
       offset: 0,
       quantity: 1,
     }
+  },
+  watch: {
+    config: {
+      handler () {
+        this.updateList(this.config, this.index)
+      },
+      deep: true
+    }
+  },
+  mounted () {
+    this.model = this.allWheels[this.modelIndex].title
   },
   methods: {
     findPrice (val, type) {
@@ -114,7 +126,7 @@ export default {
       return (this.findPrice(this.diameter, `diameter`) + this.findPrice(this.width, `width`)) * this.quantity || 0
     },
     wheelImage () {
-      return this.allWheels.filter(wheel => wheel.title === this.model)[0][`front-on-image`]
+      return this.model.length && this.allWheels.filter(wheel => wheel.title === this.model)[0][`front-on-image`]
     },
     config () {
       return {

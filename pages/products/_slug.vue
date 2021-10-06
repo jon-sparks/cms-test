@@ -13,20 +13,24 @@
             <WheelBuilder
               v-for="(num, index) in counter"
               :key="`config-${num}`"
+              :updateList="updateList"
+              :modelIndex="modelIndex"
               :closeLast="closeLast"
-              :model="model"
               :allWheels="indexData"
               :last="index === counter - 1"
               :index="index"
               ref="builder"
             />
             <button
+              v-if="counter < 4"
               class="product__add"
               @click="addSet"
             >
               <div class="product__add-plus"></div>
+              <span>Add<br>Configuration</span>
             </button>
           </div>
+          <div v-html="formattedConfigs"></div>
         </div>
       </div>
     </div>
@@ -59,13 +63,33 @@ export default {
     return {
       options: null,
       counter: 1,
+      configs: [],
+      formattedConfigs: null,
     }
   },
   methods: {
+    updateList (obj, index) {
+      this.configs[index] = obj
+      this.formatConfigs()
+    },
+    formatConfigs () {
+      const strings = this.configs.map(config => (
+      `<ul>
+        <li>model: ${config.model}</li>
+        <li>diameter: ${config.diameter}</li>
+        <li>width: ${config.width}</li>
+        <li>offset: ${config.offset}</li>
+        <li>quantity: ${config.quantity}</li>
+      </ul>`
+      ))
+      strings.length > 1 ? this.formattedConfigs = strings.join(``) : this.formattedConfigs = strings[0]
+    },
     addSet () {
       this.counter++
     },
-    closeLast () {
+    closeLast (index) {
+      this.configs.splice(this.configs.length - 1, 1)
+      this.formatConfigs()
       this.counter--
     },
     addToBasket () {
@@ -109,25 +133,12 @@ export default {
     },
   },
   computed: {
+    modelIndex () {
+      return this.indexData.findIndex(item => item.title === this.model)
+    },
     slug () {
       return this.post.title.replace(/\s+/g, '-').toLowerCase()
     },
-    stuff () {
-      const arr = []
-      this.$refs.builder.forEach(build => arr.push(build.config))
-      return arr
-    }
-    // body () {
-    //   return `
-    //   <ul>
-    //     <li>model: ${this.model}</li>
-    //     <li>diameter: ${this.diameter}</li>
-    //     <li>width: ${this.width}</li>
-    //     <li>offset: ${this.offset}</li>
-    //     <li>quantity: ${this.quantity}</li>
-    //   </ul>
-    //   `
-    // }
   }
 };
 </script>
@@ -167,6 +178,8 @@ export default {
   &__add {
     position: relative;
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
     place-self: stretch;
@@ -175,6 +188,14 @@ export default {
     border: solid 1px var(--primary);
     border-radius: 10px;
     background: none;
+    cursor: pointer;
+
+    span {
+      font-family: var(--heading-font);
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 22px;
+    }
 
     &-plus {
       position: relative;
@@ -186,7 +207,6 @@ export default {
       border: solid 2px var(--primary);
       border-radius: 50%;
       background: none;
-      cursor: pointer;
 
       &::before,
       &::after {
